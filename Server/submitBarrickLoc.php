@@ -1,7 +1,7 @@
 <?php 
 /*
- * PersonDetails location-only Submit V 1.0
- * Kevin James Hunt 2014
+ * Barrick Motion Data Sender V 1.0
+ * Kevin James Hunt 2017
  * kevinjameshunt@gmail.com
  * http://www.kevinjameshunt.com
  *
