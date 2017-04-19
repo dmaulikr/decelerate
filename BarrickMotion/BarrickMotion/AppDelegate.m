@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "BarrickDataManager.h"
 
 @interface AppDelegate ()
 
@@ -14,13 +15,23 @@
 
 @implementation AppDelegate {
     CMMotionManager *_motionManager;
+    UITabBarController *_tabBarController;
 }
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    // Initialize the motion manager for the app and keep the instance
     _motionManager  = [[CMMotionManager alloc] init];
+    
+    // Initialzie the Data Manager
+    [[BarrickDataManager sharedDataManager] initializeWithLocalData];
+    
+    // Initialize the tab bar controller object
+    _tabBarController = (UITabBarController *)[[self window] rootViewController];
+    [_tabBarController setSelectedIndex:0];
+    [_tabBarController setDelegate:self];
     
     return YES;
 }
@@ -52,8 +63,24 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - Helper Methods
+
 - (CMMotionManager *)sharedManager {
     return _motionManager;
+}
+
+- (NSInteger)activeTabIndex {
+    return _tabBarController.selectedIndex;
+}
+
+- (void)changeActiveTab:(NSInteger)tabIndex {
+    [_tabBarController setSelectedIndex:tabIndex];
+}
+
+#pragma mark - UITabController delegate
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    return YES;
 }
 
 @end

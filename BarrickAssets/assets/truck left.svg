@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="16px" viewBox="0 0 22 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>truck left</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="dash" transform="translate(-31.000000, -412.000000)" stroke="#7D7D7D">
+            <g id="truck-left" transform="translate(32.000000, 413.000000)">
+                <path d="M5.83333333,12.0833333 C5.83333333,13.0041667 5.0875,13.75 4.16666667,13.75 C3.24583333,13.75 2.5,13.0041667 2.5,12.0833333 C2.5,11.1625 3.24583333,10.4166667 4.16666667,10.4166667 C5.0875,10.4166667 5.83333333,11.1625 5.83333333,12.0833333 Z" id="Stroke-1"></path>
+                <path d="M17.5,12.0833333 C17.5,13.0041667 16.7541667,13.75 15.8333333,13.75 C14.9125,13.75 14.1666667,13.0041667 14.1666667,12.0833333 C14.1666667,11.1625 14.9125,10.4166667 15.8333333,10.4166667 C16.7541667,10.4166667 17.5,11.1625 17.5,12.0833333 Z" id="Stroke-3"></path>
+                <polyline id="Stroke-5" points="2.5 12.0833333 0.416666667 12.0833333 0.416666667 7.5 2.08333333 5.83333333 4.16666667 2.08333333 7.91666667 2.08333333 7.91666667 0.416666667 19.5833333 0.416666667 19.5833333 12.0833333 17.5 12.0833333"></polyline>
+                <path d="M5.83333333,12.0833333 L14.1666667,12.0833333" id="Stroke-7"></path>
+                <polyline id="Stroke-9" points="6.25 3.75 5 3.75 3.75 6.25"></polyline>
+                <path d="M7.91666667,2.08333333 L7.91666667,10.4166667" id="Stroke-11"></path>
+                <path d="M0.416666667,10.4166667 L19.5833333,10.4166667" id="Stroke-13"></path>
+            </g>
+        </g>
+    </g>
+</svg>

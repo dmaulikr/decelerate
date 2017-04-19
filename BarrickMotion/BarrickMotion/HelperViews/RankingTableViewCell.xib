@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="rankingCellIdentifier" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="rankingCellIdentifier" id="KGk-i7-Jjw" customClass="RankingTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDh-BF-Jmk" userLabel="rankLabel">
+                        <rect key="frame" x="18" y="11" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="1VR-XI-W9D"/>
+                            <constraint firstAttribute="height" constant="21" id="dA2-ih-ePh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                        <color key="textColor" red="0.72156862749999995" green="0.62352941179999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ab7-v0-wDb" userLabel="scoreLabel">
+                        <rect key="frame" x="237" y="11" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="2fU-iD-jF0"/>
+                            <constraint firstAttribute="height" constant="21" id="ESA-zt-VyW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                        <color key="textColor" red="0.0" green="0.2901960784" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellow_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="aZV-ad-q5H">
+                        <rect key="frame" x="90" y="32" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="LTB-ux-Auq"/>
+                            <constraint firstAttribute="height" constant="15" id="SJ6-qF-4Ls"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPY-vV-RIR" userLabel="nameLabel">
+                        <rect key="frame" x="60" y="8" width="180" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="00i-2q-Imj"/>
+                            <constraint firstAttribute="width" constant="180" id="cTP-go-yP9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" red="0.16078431369999999" green="0.41960784309999999" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQU-6T-JdI" userLabel="starLabel">
+                        <rect key="frame" x="60" y="29" width="30" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="BUh-Zj-jvn"/>
+                            <constraint firstAttribute="height" constant="21" id="Bb5-dt-ONa"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aZV-ad-q5H" firstAttribute="top" secondItem="aPY-vV-RIR" secondAttribute="bottom" constant="3" id="BK0-TM-pPj"/>
+                    <constraint firstItem="aZV-ad-q5H" firstAttribute="leading" secondItem="GQU-6T-JdI" secondAttribute="trailing" id="CDx-UH-WqI"/>
+                    <constraint firstItem="aPY-vV-RIR" firstAttribute="leading" secondItem="zDh-BF-Jmk" secondAttribute="trailing" id="Wpm-1N-kyH"/>
+                    <constraint firstItem="GQU-6T-JdI" firstAttribute="leading" secondItem="aPY-vV-RIR" secondAttribute="leading" id="XRB-4M-u2i"/>
+                    <constraint firstItem="zDh-BF-Jmk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="gZ5-tc-YHx"/>
+                    <constraint firstItem="GQU-6T-JdI" firstAttribute="top" secondItem="aPY-vV-RIR" secondAttribute="bottom" id="hVK-hl-7tN"/>
+                    <constraint firstItem="aPY-vV-RIR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="jkx-Bz-ARm"/>
+                    <constraint firstItem="zDh-BF-Jmk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="r2k-w2-MC0"/>
+                    <constraint firstItem="Ab7-v0-wDb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="rID-fo-iOy"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Ab7-v0-wDb" secondAttribute="trailing" id="sKf-UT-pZY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nameLbl" destination="aPY-vV-RIR" id="uLg-H9-wMY"/>
+                <outlet property="rankLbl" destination="zDh-BF-Jmk" id="B8E-Xl-erC"/>
+                <outlet property="scoreLbl" destination="Ab7-v0-wDb" id="8CL-zl-YX4"/>
+                <outlet property="starLbl" destination="GQU-6T-JdI" id="0Xk-Ef-AnG"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="yellow_star.png" width="50" height="50"/>
+    </resources>
+</document>

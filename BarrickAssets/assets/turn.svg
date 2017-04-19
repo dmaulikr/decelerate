@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>turn</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="dash" transform="translate(-31.000000, -504.000000)" stroke="#7D7D7D">
+            <g id="turn" transform="translate(32.000000, 505.000000)">
+                <path d="M19.5652174,10 C19.5652174,15.2826087 15.2826087,19.5652174 10,19.5652174 C4.7173913,19.5652174 0.434782609,15.2826087 0.434782609,10 C0.434782609,4.7173913 4.7173913,0.434782609 10,0.434782609 C15.2826087,0.434782609 19.5652174,4.7173913 19.5652174,10 Z" id="Stroke-1"></path>
+                <path d="M11.7391304,6.52173913 L6.95652174,6.52173913 C4.34782609,6.52173913 3.47826087,8.94956522 3.47826087,10.8695652 C3.47826087,12.7904348 4.7826087,14.3478261 4.7826087,14.3478261 L4.7826087,12.173913 C4.7826087,11.3043478 5.2173913,10.8695652 6.95652174,10.8695652 L11.7391304,10.8695652 L11.7391304,13.4782609 L16.0869565,8.69565217 L11.7391304,3.91304348 L11.7391304,6.52173913 Z" id="Stroke-3"></path>
+            </g>
+        </g>
+    </g>
+</svg>

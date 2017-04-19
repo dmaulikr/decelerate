@@ -6,7 +6,7 @@
 //  Copyright © 2017 Prophet Studios. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ActiveTripViewController.h"
 #import "AppDelegate.h"
 #import "DataPacket.h"
 #import <CoreMotion/CoreMotion.h>
@@ -16,11 +16,11 @@
 static const NSTimeInterval accelerometerMin = 0.5; // 500 milliseconds
 static const float zeroGraphYOffset = 120.0;
 
-@interface ViewController ()
+@interface ActiveTripViewController ()
 
 @end
 
-@implementation ViewController {
+@implementation ActiveTripViewController {
     UIView *_graphView;
     NSMutableArray *_xAccVals;
     NSMutableArray *_yAccVals;
@@ -70,7 +70,7 @@ static const float zeroGraphYOffset = 120.0;
         
         // Create a CMMotionManager
         CMMotionManager *mManager = [(AppDelegate *)[[UIApplication sharedApplication] delegate] sharedManager];
-        ViewController * __weak weakSelf = self;
+        ActiveTripViewController * __weak weakSelf = self;
         
         // Check whether the accelerometer is available
         if ([mManager isAccelerometerAvailable] == YES) {

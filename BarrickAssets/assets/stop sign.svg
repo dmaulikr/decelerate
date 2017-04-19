@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>stop sign</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dash" transform="translate(-31.000000, -553.000000)">
+            <g id="stop-sign" transform="translate(32.000000, 554.000000)">
+                <g id="Page-1" stroke-linecap="round" stroke="#7D7D7D" stroke-linejoin="round">
+                    <polygon id="Stroke-3" points="6.03675 19.5833333 0.41675 13.9866667 0.41675 6.10916667 6.03675 0.416666667 13.9150833 0.416666667 19.5834167 6.10916667 19.5834167 13.9866667 13.9150833 19.5833333"></polygon>
+                </g>
+                <text id="STOP" font-family="OpenSans-Semibold, Open Sans" font-size="6" font-weight="500" letter-spacing="0.50999999" fill="#7D7D7D">
+                    <tspan x="2" y="12">STO</tspan>
+                    <tspan x="14.826875" y="12">P</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

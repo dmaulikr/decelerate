@@ -1,0 +1,88 @@
+{
+    "tripData" : [
+              {
+              "date":"April 17, 2017",
+              "time":"2:50pm",
+              "address":"1140 Bathurst Street",
+              "score":"65"
+              },
+              {
+              "date":"April 17, 2017",
+              "time":"2:00pm",
+              "address":"405 Yonge Street",
+              "score":"70"
+              },
+              {
+              "date":"March 31, 2017",
+              "time":"3:50pm",
+              "address":"405 Yonge Street",
+              "score":"82"
+              },
+              {
+              "date":"March 24, 2017",
+              "time":"6:00pm",
+              "address":"1140 Bathurst Street",
+              "score":"71"
+              },
+              {
+              "date":"March 24, 2017",
+              "time":"4:10pm",
+              "address":"1140 Bathurst Street",
+              "score":"68"
+              },
+              {
+              "date":"March 17, 2017",
+              "time":"2:45pm",
+              "address":"1140 Bathurst Street",
+              "score":"80"
+              },
+              {
+              "date":"March 14, 2017",
+              "time":"10:00am",
+              "address":"405 Yonge Street",
+              "score":"79"
+              },
+              {
+              "date":"March 11, 2017",
+              "time":"2:00pm",
+              "address":"405 Yonge Street",
+              "score":"62"
+              },
+              {
+              "date":"March 11, 2017",
+              "time":"12:30pm",
+              "address":"1140 Bathurst Street",
+              "score":"80"
+              },
+              {
+              "date":"March 10, 2017",
+              "time":"4:00pm",
+              "address":"405 Yonge Street",
+              "score":"79"
+              },
+              {
+              "date":"March 9, 2017",
+              "time":"3:25pm",
+              "address":"1140 Bathurst Street",
+              "score":"74"
+              },
+              {
+              "date":"March 9, 2017",
+              "time":"2:00pm",
+              "address":"405 Yonge Street",
+              "score":"72"
+              },
+              {
+              "date":"March 9, 2017",
+              "time":"10:30am",
+              "address":"1140 Bathurst Street",
+              "score":"81"
+              },
+              {
+              "date":"March 1, 2017",
+              "time":"2:00pm",
+              "address":"1140 Bathurst Street",
+              "score":"64"
+              }
+]
+}

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController <UIScrollViewDelegate, CLLocationManagerDelegate>
+@interface ActiveTripViewController : UIViewController <UIScrollViewDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *startStopButton;
 @property (strong, nonatomic) IBOutlet UITextField *driverId;

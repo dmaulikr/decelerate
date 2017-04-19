@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="trip-details" transform="translate(-34.000000, -404.000000)">
+            <g id="Page-1" transform="translate(34.000000, 404.000000)">
+                <path d="M21.3516471,10.8522118 C21.45,16.5709176 16.7174118,21.2866824 11,21.3863294 C5.28258824,21.4859765 0.748,16.9293882 0.648352941,11.2132706 C0.548705882,5.49585882 5.28258824,0.7788 11,0.680447059 C16.7174118,0.579505882 21.252,5.13609412 21.3516471,10.8522118 Z" id="Stroke-1" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M11,12.3269882 L11,5.85510588" id="Stroke-3" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M11.0019412,14.9746235 L11.0006471,14.9746235 L10.9838235,14.9746235 C10.4648824,14.9836824 10.0507647,15.4120353 10.0585294,15.9309765 C10.0675882,16.4460353 10.4881765,16.8562706 11.0006471,16.8562706 L11.0174706,16.8562706 C11.5364118,16.8472118 11.9505294,16.4175647 11.9427647,15.8999176 C11.9337059,15.3835647 11.5144118,14.9746235 11.0019412,14.9746235" id="Fill-5" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

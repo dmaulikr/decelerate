@@ -9,12 +9,36 @@
 /* Begin PBXBuildFile section */
 		0412FDCB1E6B2E6600E6275B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412FDCA1E6B2E6600E6275B /* main.m */; };
 		0412FDCE1E6B2E6600E6275B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412FDCD1E6B2E6600E6275B /* AppDelegate.m */; };
-		0412FDD11E6B2E6600E6275B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412FDD01E6B2E6600E6275B /* ViewController.m */; };
 		0412FDD41E6B2E6600E6275B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0412FDD21E6B2E6600E6275B /* Main.storyboard */; };
 		0412FDD61E6B2E6600E6275B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0412FDD51E6B2E6600E6275B /* Assets.xcassets */; };
 		0412FDD91E6B2E6600E6275B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0412FDD71E6B2E6600E6275B /* LaunchScreen.storyboard */; };
 		0412FDE21E6B356F00E6275B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0412FDE11E6B356F00E6275B /* CoreMotion.framework */; };
 		0412FDE51E6B4D8F00E6275B /* DataPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412FDE41E6B4D8F00E6275B /* DataPacket.m */; };
+		0454DAB51EA6AA0400751BD7 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAB41EA6AA0400751BD7 /* DashboardViewController.m */; };
+		0454DABD1EA6AA3F00751BD7 /* ActiveTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DABA1EA6AA3E00751BD7 /* ActiveTripViewController.m */; };
+		0454DABE1EA6AA3F00751BD7 /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DABC1EA6AA3E00751BD7 /* TripsViewController.m */; };
+		0454DAC11EA6AA5400751BD7 /* RankingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAC01EA6AA5400751BD7 /* RankingsViewController.m */; };
+		0454DAC71EA6AD0800751BD7 /* NavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAC51EA6AD0800751BD7 /* NavigationBarViewController.m */; };
+		0454DAC81EA6AD0800751BD7 /* NavigationBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0454DAC61EA6AD0800751BD7 /* NavigationBarViewController.xib */; };
+		0454DACB1EA6AFE600751BD7 /* PastTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DACA1EA6AFE600751BD7 /* PastTripViewController.m */; };
+		0454DACE1EA6B09E00751BD7 /* ColorPallete.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DACD1EA6B09E00751BD7 /* ColorPallete.m */; };
+		0454DAD21EA6BEB200751BD7 /* circle_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 0454DAD11EA6BEB200751BD7 /* circle_star.png */; };
+		0454DAD51EA6BF1800751BD7 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0454DAD31EA6BF1800751BD7 /* Logo.png */; };
+		0454DAD61EA6BF1800751BD7 /* yellow_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 0454DAD41EA6BF1800751BD7 /* yellow_star.png */; };
+		0454DADC1EA6CC2C00751BD7 /* speedometer.png in Resources */ = {isa = PBXBuildFile; fileRef = 0454DAD71EA6CC2C00751BD7 /* speedometer.png */; };
+		0454DADD1EA6CC2C00751BD7 /* stop_sign.png in Resources */ = {isa = PBXBuildFile; fileRef = 0454DAD81EA6CC2C00751BD7 /* stop_sign.png */; };
+		0454DADE1EA6CC2C00751BD7 /* truck_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 0454DAD91EA6CC2C00751BD7 /* truck_left.png */; };
+		0454DADF1EA6CC2C00751BD7 /* truck_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 0454DADA1EA6CC2C00751BD7 /* truck_right.png */; };
+		0454DAE01EA6CC2C00751BD7 /* turn.png in Resources */ = {isa = PBXBuildFile; fileRef = 0454DADB1EA6CC2C00751BD7 /* turn.png */; };
+		0454DAEA1EA6E91F00751BD7 /* TripsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAE81EA6E91F00751BD7 /* TripsTableViewCell.m */; };
+		0454DAEB1EA6E91F00751BD7 /* TripsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0454DAE91EA6E91F00751BD7 /* TripsTableViewCell.xib */; };
+		0454DAEF1EA6E93D00751BD7 /* RankingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAED1EA6E93D00751BD7 /* RankingTableViewCell.m */; };
+		0454DAF01EA6E93D00751BD7 /* RankingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0454DAEE1EA6E93D00751BD7 /* RankingTableViewCell.xib */; };
+		0454DAF21EA6EFB800751BD7 /* TripData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0454DAF11EA6EFB800751BD7 /* TripData.json */; };
+		0454DAF41EA6EFCD00751BD7 /* RankingData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0454DAF31EA6EFCD00751BD7 /* RankingData.json */; };
+		0454DAF71EA6F43300751BD7 /* BarrickDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAF61EA6F43300751BD7 /* BarrickDataManager.m */; };
+		0454DAFA1EA6F45C00751BD7 /* BarrickTripData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAF91EA6F45C00751BD7 /* BarrickTripData.m */; };
+		0454DAFD1EA6F46F00751BD7 /* BarrickRankingData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAFC1EA6F46F00751BD7 /* BarrickRankingData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,8 +46,6 @@
 		0412FDCA1E6B2E6600E6275B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0412FDCC1E6B2E6600E6275B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0412FDCD1E6B2E6600E6275B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0412FDCF1E6B2E6600E6275B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0412FDD01E6B2E6600E6275B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0412FDD31E6B2E6600E6275B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0412FDD51E6B2E6600E6275B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0412FDD81E6B2E6600E6275B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,6 +53,43 @@
 		0412FDE11E6B356F00E6275B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		0412FDE31E6B4D8F00E6275B /* DataPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPacket.h; sourceTree = "<group>"; };
 		0412FDE41E6B4D8F00E6275B /* DataPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPacket.m; sourceTree = "<group>"; };
+		0454DAB31EA6AA0400751BD7 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DashboardViewController.h; path = ViewControllers/DashboardViewController.h; sourceTree = "<group>"; };
+		0454DAB41EA6AA0400751BD7 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DashboardViewController.m; path = ViewControllers/DashboardViewController.m; sourceTree = "<group>"; };
+		0454DAB91EA6AA3E00751BD7 /* ActiveTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActiveTripViewController.h; path = ViewControllers/ActiveTripViewController.h; sourceTree = "<group>"; };
+		0454DABA1EA6AA3E00751BD7 /* ActiveTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActiveTripViewController.m; path = ViewControllers/ActiveTripViewController.m; sourceTree = "<group>"; };
+		0454DABB1EA6AA3E00751BD7 /* TripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripsViewController.h; path = ViewControllers/TripsViewController.h; sourceTree = "<group>"; };
+		0454DABC1EA6AA3E00751BD7 /* TripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripsViewController.m; path = ViewControllers/TripsViewController.m; sourceTree = "<group>"; };
+		0454DABF1EA6AA5400751BD7 /* RankingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankingsViewController.h; path = ViewControllers/RankingsViewController.h; sourceTree = "<group>"; };
+		0454DAC01EA6AA5400751BD7 /* RankingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankingsViewController.m; path = ViewControllers/RankingsViewController.m; sourceTree = "<group>"; };
+		0454DAC41EA6AD0800751BD7 /* NavigationBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationBarViewController.h; path = HelperViews/NavigationBarViewController.h; sourceTree = "<group>"; };
+		0454DAC51EA6AD0800751BD7 /* NavigationBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationBarViewController.m; path = HelperViews/NavigationBarViewController.m; sourceTree = "<group>"; };
+		0454DAC61EA6AD0800751BD7 /* NavigationBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NavigationBarViewController.xib; path = HelperViews/NavigationBarViewController.xib; sourceTree = "<group>"; };
+		0454DAC91EA6AFE600751BD7 /* PastTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PastTripViewController.h; path = ViewControllers/PastTripViewController.h; sourceTree = "<group>"; };
+		0454DACA1EA6AFE600751BD7 /* PastTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PastTripViewController.m; path = ViewControllers/PastTripViewController.m; sourceTree = "<group>"; };
+		0454DACC1EA6B09E00751BD7 /* ColorPallete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorPallete.h; path = HelperClasses/ColorPallete.h; sourceTree = "<group>"; };
+		0454DACD1EA6B09E00751BD7 /* ColorPallete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorPallete.m; path = HelperClasses/ColorPallete.m; sourceTree = "<group>"; };
+		0454DAD11EA6BEB200751BD7 /* circle_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circle_star.png; path = Resources/circle_star.png; sourceTree = "<group>"; };
+		0454DAD31EA6BF1800751BD7 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo.png; path = Resources/Logo.png; sourceTree = "<group>"; };
+		0454DAD41EA6BF1800751BD7 /* yellow_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yellow_star.png; path = Resources/yellow_star.png; sourceTree = "<group>"; };
+		0454DAD71EA6CC2C00751BD7 /* speedometer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speedometer.png; path = Resources/speedometer.png; sourceTree = "<group>"; };
+		0454DAD81EA6CC2C00751BD7 /* stop_sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stop_sign.png; path = Resources/stop_sign.png; sourceTree = "<group>"; };
+		0454DAD91EA6CC2C00751BD7 /* truck_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = truck_left.png; path = Resources/truck_left.png; sourceTree = "<group>"; };
+		0454DADA1EA6CC2C00751BD7 /* truck_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = truck_right.png; path = Resources/truck_right.png; sourceTree = "<group>"; };
+		0454DADB1EA6CC2C00751BD7 /* turn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = turn.png; path = Resources/turn.png; sourceTree = "<group>"; };
+		0454DAE71EA6E91F00751BD7 /* TripsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripsTableViewCell.h; path = HelperViews/TripsTableViewCell.h; sourceTree = "<group>"; };
+		0454DAE81EA6E91F00751BD7 /* TripsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripsTableViewCell.m; path = HelperViews/TripsTableViewCell.m; sourceTree = "<group>"; };
+		0454DAE91EA6E91F00751BD7 /* TripsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TripsTableViewCell.xib; path = HelperViews/TripsTableViewCell.xib; sourceTree = "<group>"; };
+		0454DAEC1EA6E93D00751BD7 /* RankingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankingTableViewCell.h; path = HelperViews/RankingTableViewCell.h; sourceTree = "<group>"; };
+		0454DAED1EA6E93D00751BD7 /* RankingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankingTableViewCell.m; path = HelperViews/RankingTableViewCell.m; sourceTree = "<group>"; };
+		0454DAEE1EA6E93D00751BD7 /* RankingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RankingTableViewCell.xib; path = HelperViews/RankingTableViewCell.xib; sourceTree = "<group>"; };
+		0454DAF11EA6EFB800751BD7 /* TripData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TripData.json; path = Resources/TripData.json; sourceTree = "<group>"; };
+		0454DAF31EA6EFCD00751BD7 /* RankingData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = RankingData.json; path = Resources/RankingData.json; sourceTree = "<group>"; };
+		0454DAF51EA6F43300751BD7 /* BarrickDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarrickDataManager.h; path = DataObjects/BarrickDataManager.h; sourceTree = "<group>"; };
+		0454DAF61EA6F43300751BD7 /* BarrickDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarrickDataManager.m; path = DataObjects/BarrickDataManager.m; sourceTree = "<group>"; };
+		0454DAF81EA6F45C00751BD7 /* BarrickTripData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarrickTripData.h; path = DataObjects/BarrickTripData.h; sourceTree = "<group>"; };
+		0454DAF91EA6F45C00751BD7 /* BarrickTripData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarrickTripData.m; path = DataObjects/BarrickTripData.m; sourceTree = "<group>"; };
+		0454DAFB1EA6F46F00751BD7 /* BarrickRankingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarrickRankingData.h; path = DataObjects/BarrickRankingData.h; sourceTree = "<group>"; };
+		0454DAFC1EA6F46F00751BD7 /* BarrickRankingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarrickRankingData.m; path = DataObjects/BarrickRankingData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,16 +124,17 @@
 		0412FDC81E6B2E6600E6275B /* BarrickMotion */ = {
 			isa = PBXGroup;
 			children = (
-				0412FDE31E6B4D8F00E6275B /* DataPacket.h */,
-				0412FDE41E6B4D8F00E6275B /* DataPacket.m */,
+				0454DAC21EA6AC5E00751BD7 /* DataObjects */,
+				0454DACF1EA6B0A200751BD7 /* HelperClasses */,
+				0454DAC31EA6AC7100751BD7 /* HelperViews */,
+				0454DAB21EA6A9E500751BD7 /* ViewControllers */,
 				0412FDCC1E6B2E6600E6275B /* AppDelegate.h */,
 				0412FDCD1E6B2E6600E6275B /* AppDelegate.m */,
-				0412FDCF1E6B2E6600E6275B /* ViewController.h */,
-				0412FDD01E6B2E6600E6275B /* ViewController.m */,
 				0412FDD21E6B2E6600E6275B /* Main.storyboard */,
 				0412FDD51E6B2E6600E6275B /* Assets.xcassets */,
 				0412FDD71E6B2E6600E6275B /* LaunchScreen.storyboard */,
 				0412FDDA1E6B2E6600E6275B /* Info.plist */,
+				0454DAD01EA6BE9C00751BD7 /* Resources */,
 				0412FDC91E6B2E6600E6275B /* Supporting Files */,
 			);
 			path = BarrickMotion;
@@ -94,6 +154,80 @@
 				0412FDE11E6B356F00E6275B /* CoreMotion.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0454DAB21EA6A9E500751BD7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0454DAB31EA6AA0400751BD7 /* DashboardViewController.h */,
+				0454DAB41EA6AA0400751BD7 /* DashboardViewController.m */,
+				0454DABB1EA6AA3E00751BD7 /* TripsViewController.h */,
+				0454DABC1EA6AA3E00751BD7 /* TripsViewController.m */,
+				0454DABF1EA6AA5400751BD7 /* RankingsViewController.h */,
+				0454DAC01EA6AA5400751BD7 /* RankingsViewController.m */,
+				0454DAB91EA6AA3E00751BD7 /* ActiveTripViewController.h */,
+				0454DABA1EA6AA3E00751BD7 /* ActiveTripViewController.m */,
+				0454DAC91EA6AFE600751BD7 /* PastTripViewController.h */,
+				0454DACA1EA6AFE600751BD7 /* PastTripViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0454DAC21EA6AC5E00751BD7 /* DataObjects */ = {
+			isa = PBXGroup;
+			children = (
+				0412FDE31E6B4D8F00E6275B /* DataPacket.h */,
+				0412FDE41E6B4D8F00E6275B /* DataPacket.m */,
+				0454DAF51EA6F43300751BD7 /* BarrickDataManager.h */,
+				0454DAF61EA6F43300751BD7 /* BarrickDataManager.m */,
+				0454DAF81EA6F45C00751BD7 /* BarrickTripData.h */,
+				0454DAF91EA6F45C00751BD7 /* BarrickTripData.m */,
+				0454DAFB1EA6F46F00751BD7 /* BarrickRankingData.h */,
+				0454DAFC1EA6F46F00751BD7 /* BarrickRankingData.m */,
+			);
+			name = DataObjects;
+			sourceTree = "<group>";
+		};
+		0454DAC31EA6AC7100751BD7 /* HelperViews */ = {
+			isa = PBXGroup;
+			children = (
+				0454DAC41EA6AD0800751BD7 /* NavigationBarViewController.h */,
+				0454DAC51EA6AD0800751BD7 /* NavigationBarViewController.m */,
+				0454DAC61EA6AD0800751BD7 /* NavigationBarViewController.xib */,
+				0454DAE71EA6E91F00751BD7 /* TripsTableViewCell.h */,
+				0454DAE81EA6E91F00751BD7 /* TripsTableViewCell.m */,
+				0454DAE91EA6E91F00751BD7 /* TripsTableViewCell.xib */,
+				0454DAEC1EA6E93D00751BD7 /* RankingTableViewCell.h */,
+				0454DAED1EA6E93D00751BD7 /* RankingTableViewCell.m */,
+				0454DAEE1EA6E93D00751BD7 /* RankingTableViewCell.xib */,
+			);
+			name = HelperViews;
+			sourceTree = "<group>";
+		};
+		0454DACF1EA6B0A200751BD7 /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				0454DACC1EA6B09E00751BD7 /* ColorPallete.h */,
+				0454DACD1EA6B09E00751BD7 /* ColorPallete.m */,
+			);
+			name = HelperClasses;
+			sourceTree = "<group>";
+		};
+		0454DAD01EA6BE9C00751BD7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0454DAD31EA6BF1800751BD7 /* Logo.png */,
+				0454DAD41EA6BF1800751BD7 /* yellow_star.png */,
+				0454DAD11EA6BEB200751BD7 /* circle_star.png */,
+				0454DAD71EA6CC2C00751BD7 /* speedometer.png */,
+				0454DAD81EA6CC2C00751BD7 /* stop_sign.png */,
+				0454DAD91EA6CC2C00751BD7 /* truck_left.png */,
+				0454DADA1EA6CC2C00751BD7 /* truck_right.png */,
+				0454DADB1EA6CC2C00751BD7 /* turn.png */,
+				0454DAF11EA6EFB800751BD7 /* TripData.json */,
+				0454DAF31EA6EFCD00751BD7 /* RankingData.json */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,9 +289,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0454DADD1EA6CC2C00751BD7 /* stop_sign.png in Resources */,
+				0454DAEB1EA6E91F00751BD7 /* TripsTableViewCell.xib in Resources */,
+				0454DAD51EA6BF1800751BD7 /* Logo.png in Resources */,
+				0454DADF1EA6CC2C00751BD7 /* truck_right.png in Resources */,
+				0454DAF01EA6E93D00751BD7 /* RankingTableViewCell.xib in Resources */,
+				0454DAD21EA6BEB200751BD7 /* circle_star.png in Resources */,
+				0454DAD61EA6BF1800751BD7 /* yellow_star.png in Resources */,
+				0454DADE1EA6CC2C00751BD7 /* truck_left.png in Resources */,
+				0454DAC81EA6AD0800751BD7 /* NavigationBarViewController.xib in Resources */,
 				0412FDD91E6B2E6600E6275B /* LaunchScreen.storyboard in Resources */,
+				0454DAE01EA6CC2C00751BD7 /* turn.png in Resources */,
 				0412FDD61E6B2E6600E6275B /* Assets.xcassets in Resources */,
+				0454DAF41EA6EFCD00751BD7 /* RankingData.json in Resources */,
 				0412FDD41E6B2E6600E6275B /* Main.storyboard in Resources */,
+				0454DAF21EA6EFB800751BD7 /* TripData.json in Resources */,
+				0454DADC1EA6CC2C00751BD7 /* speedometer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,10 +315,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0412FDD11E6B2E6600E6275B /* ViewController.m in Sources */,
+				0454DAFD1EA6F46F00751BD7 /* BarrickRankingData.m in Sources */,
+				0454DABD1EA6AA3F00751BD7 /* ActiveTripViewController.m in Sources */,
+				0454DAB51EA6AA0400751BD7 /* DashboardViewController.m in Sources */,
 				0412FDE51E6B4D8F00E6275B /* DataPacket.m in Sources */,
+				0454DACB1EA6AFE600751BD7 /* PastTripViewController.m in Sources */,
+				0454DAFA1EA6F45C00751BD7 /* BarrickTripData.m in Sources */,
 				0412FDCE1E6B2E6600E6275B /* AppDelegate.m in Sources */,
+				0454DAC71EA6AD0800751BD7 /* NavigationBarViewController.m in Sources */,
+				0454DAEF1EA6E93D00751BD7 /* RankingTableViewCell.m in Sources */,
 				0412FDCB1E6B2E6600E6275B /* main.m in Sources */,
+				0454DAF71EA6F43300751BD7 /* BarrickDataManager.m in Sources */,
+				0454DAEA1EA6E91F00751BD7 /* TripsTableViewCell.m in Sources */,
+				0454DACE1EA6B09E00751BD7 /* ColorPallete.m in Sources */,
+				0454DAC11EA6AA5400751BD7 /* RankingsViewController.m in Sources */,
+				0454DABE1EA6AA3F00751BD7 /* TripsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +490,7 @@
 				0412FDDF1E6B2E6600E6275B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
