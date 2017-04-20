@@ -52,5 +52,9 @@
 */
 
 - (IBAction)startTripBtnPressed:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.activeTripViewController = (ActiveTripViewController *)[sb instantiateViewControllerWithIdentifier:@"ActiveTripViewController"];
+    //self.activeTripViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:self.activeTripViewController animated:YES completion:nil];
 }
 @end

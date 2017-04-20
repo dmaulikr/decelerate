@@ -66,24 +66,24 @@
                     </connections>
                 </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fcn-dl-umL" userLabel="DashboardUnderline">
-                    <rect key="frame" x="16" y="43" width="100" height="5"/>
+                    <rect key="frame" x="16" y="45" width="100" height="3"/>
                     <color key="backgroundColor" red="0.72156862745098038" green="0.62352941176470589" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="5" id="2pH-nj-HYo"/>
+                        <constraint firstAttribute="height" constant="3" id="2pH-nj-HYo"/>
                     </constraints>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMg-vn-7AA" userLabel="TripsUnderline">
-                    <rect key="frame" x="157" y="43" width="60" height="5"/>
+                    <rect key="frame" x="157" y="45" width="60" height="3"/>
                     <color key="backgroundColor" red="0.72156862749999995" green="0.62352941179999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="5" id="Fct-2D-Twy"/>
+                        <constraint firstAttribute="height" constant="3" id="Fct-2D-Twy"/>
                     </constraints>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Upd-Ef-ERh" userLabel="RankingsUnderline">
-                    <rect key="frame" x="279" y="43" width="80" height="5"/>
+                    <rect key="frame" x="279" y="45" width="80" height="3"/>
                     <color key="backgroundColor" red="0.72156862749999995" green="0.62352941179999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="5" id="8lm-P4-fkz"/>
+                        <constraint firstAttribute="height" constant="3" id="8lm-P4-fkz"/>
                     </constraints>
                 </view>
             </subviews>

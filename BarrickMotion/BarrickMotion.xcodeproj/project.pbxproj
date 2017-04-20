@@ -39,6 +39,7 @@
 		0454DAF71EA6F43300751BD7 /* BarrickDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAF61EA6F43300751BD7 /* BarrickDataManager.m */; };
 		0454DAFA1EA6F45C00751BD7 /* BarrickTripData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAF91EA6F45C00751BD7 /* BarrickTripData.m */; };
 		0454DAFD1EA6F46F00751BD7 /* BarrickRankingData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAFC1EA6F46F00751BD7 /* BarrickRankingData.m */; };
+		0454DAFF1EA8501300751BD7 /* TripHistory.png in Resources */ = {isa = PBXBuildFile; fileRef = 0454DAFE1EA8501200751BD7 /* TripHistory.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		0454DAF91EA6F45C00751BD7 /* BarrickTripData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarrickTripData.m; path = DataObjects/BarrickTripData.m; sourceTree = "<group>"; };
 		0454DAFB1EA6F46F00751BD7 /* BarrickRankingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarrickRankingData.h; path = DataObjects/BarrickRankingData.h; sourceTree = "<group>"; };
 		0454DAFC1EA6F46F00751BD7 /* BarrickRankingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarrickRankingData.m; path = DataObjects/BarrickRankingData.m; sourceTree = "<group>"; };
+		0454DAFE1EA8501200751BD7 /* TripHistory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TripHistory.png; path = Resources/TripHistory.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 		0454DAD01EA6BE9C00751BD7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0454DAFE1EA8501200751BD7 /* TripHistory.png */,
 				0454DAD31EA6BF1800751BD7 /* Logo.png */,
 				0454DAD41EA6BF1800751BD7 /* yellow_star.png */,
 				0454DAD11EA6BEB200751BD7 /* circle_star.png */,
@@ -295,6 +298,7 @@
 				0454DADF1EA6CC2C00751BD7 /* truck_right.png in Resources */,
 				0454DAF01EA6E93D00751BD7 /* RankingTableViewCell.xib in Resources */,
 				0454DAD21EA6BEB200751BD7 /* circle_star.png in Resources */,
+				0454DAFF1EA8501300751BD7 /* TripHistory.png in Resources */,
 				0454DAD61EA6BF1800751BD7 /* yellow_star.png in Resources */,
 				0454DADE1EA6CC2C00751BD7 /* truck_left.png in Resources */,
 				0454DAC81EA6AD0800751BD7 /* NavigationBarViewController.xib in Resources */,

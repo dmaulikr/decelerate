@@ -94,6 +94,11 @@ static NSString *cellIdentifier = @"tripCellIdentifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.pastTripViewController = (PastTripViewController *)[sb instantiateViewControllerWithIdentifier:@"PastTripViewController"];
+    //self.activeTripViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:self.pastTripViewController animated:YES completion:nil];
 }
 
 @end

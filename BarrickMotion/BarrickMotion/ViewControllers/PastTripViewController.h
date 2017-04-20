@@ -10,4 +10,8 @@
 
 @interface PastTripViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIButton *backBtn;
+
+- (IBAction)backBtnPressed:(id)sender;
+
 @end

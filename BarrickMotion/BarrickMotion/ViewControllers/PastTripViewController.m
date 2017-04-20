@@ -34,4 +34,9 @@
 }
 */
 
+- (IBAction)backBtnPressed:(id)sender {
+    NSLog(@"backBtnPressed called.");
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

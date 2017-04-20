@@ -9,12 +9,18 @@
 #import "ActiveTripViewController.h"
 #import "AppDelegate.h"
 #import "DataPacket.h"
+#import "ColorPallete.h"
 #import <CoreMotion/CoreMotion.h>
+#include <AVFoundation/AVFoundation.h>
+#include <AudioToolbox/AudioToolbox.h>
 
 #define kServerUrl @"http://kevinjameshunt.com/barrick"
 
 static const NSTimeInterval accelerometerMin = 0.5; // 500 milliseconds
 static const float zeroGraphYOffset = 120.0;
+static const NSInteger kStartingTripScore = 79;
+static const NSInteger kArrayCapacity = 20;
+static const float kValueDifference = 4.0;
 
 @interface ActiveTripViewController ()
 
@@ -25,23 +31,27 @@ static const float zeroGraphYOffset = 120.0;
     NSMutableArray *_xAccVals;
     NSMutableArray *_yAccVals;
     NSMutableArray *_zAccVals;
-    NSInteger _arrayCapacity;
+    
     CAShapeLayer *_xLayer;
     CAShapeLayer *_yLayer;
     CAShapeLayer *_zLayer;
     DataPacket *_currentPacket;
+    CAShapeLayer *_circleLayer;
     BOOL _started;
+    BOOL _alertingDriver;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    _alertingDriver = NO;
+    
+    // Setup arrays
     _currentPacket = [[DataPacket alloc] init];
-    _arrayCapacity = (self.view.frame.size.width)/5;
-    _xAccVals = [[NSMutableArray alloc] initWithCapacity:_arrayCapacity];
-    _yAccVals = [[NSMutableArray alloc] initWithCapacity:_arrayCapacity];
-    _zAccVals = [[NSMutableArray alloc] initWithCapacity:_arrayCapacity];
+    _xAccVals = [[NSMutableArray alloc] initWithCapacity:kArrayCapacity];
+    _yAccVals = [[NSMutableArray alloc] initWithCapacity:kArrayCapacity];
+    _zAccVals = [[NSMutableArray alloc] initWithCapacity:kArrayCapacity];
     
     _graphView = [[UIView alloc] initWithFrame:CGRectMake(20, 20, self.view.frame.size.width-40, 200)];
     
@@ -56,15 +66,37 @@ static const float zeroGraphYOffset = 120.0;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
+    // Draw the circle
+    _circleLayer = [CAShapeLayer layer];
+    [_circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(20, 20, self.circleBorderView.frame.size.width-40, self.circleBorderView.frame.size.height-40)] CGPath]];
+    [self.circleBorderView.layer addSublayer:_circleLayer];
+    [_circleLayer setStrokeColor:[[ColorPallete goodGreen] CGColor]];
+    [_circleLayer setLineWidth:10];
+    [_circleLayer setFillColor:[[UIColor clearColor] CGColor]];
+    
+    self.scoreLbl.text = [NSString stringWithFormat:@"%ld", kStartingTripScore];
+    
+    [self startMeasurements];
 }
 
-- (IBAction)didTapStartStop:(id)sender {
-    
+- (void)viewWillDisappear:(BOOL)animated {
+    [self stopMeasurements];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Helper Methods
+
+- (void)startMeasurements {
     if (!_started) {
-        _currentPacket.driverID = self.driverId.text;
-        _currentPacket.sensorID = self.sensorId.text;
-        _currentPacket.load = self.load.text;
+        _currentPacket.driverID = @"TestDriver1";
+        _currentPacket.sensorID = @"sensor1";
+        _currentPacket.load = @"1000";
         
         [self.locationManager startUpdatingLocation];
         
@@ -78,30 +110,32 @@ static const float zeroGraphYOffset = 120.0;
             [mManager setAccelerometerUpdateInterval:accelerometerMin];
             [mManager startAccelerometerUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
                 
-                weakSelf.logView.text = [NSString stringWithFormat:@"%@\nX: %f Y:%f Z:%f", weakSelf.logView.text, accelerometerData.acceleration.x, accelerometerData.acceleration.y, accelerometerData.acceleration.z];
+//                weakSelf.logView.text = [NSString stringWithFormat:@"%@\nX: %f Y:%f Z:%f", weakSelf.logView.text, accelerometerData.acceleration.x, accelerometerData.acceleration.y, accelerometerData.acceleration.z];
+//                
+//                [weakSelf.logView scrollRectToVisible:CGRectMake(weakSelf.logView.contentSize.width - 1,weakSelf.logView.contentSize.height - 1, 1, 1) animated:YES];
                 
-                [weakSelf.logView scrollRectToVisible:CGRectMake(weakSelf.logView.contentSize.width - 1,weakSelf.logView.contentSize.height - 1, 1, 1) animated:YES];
+                _currentPacket.accelerometerData = accelerometerData;
+                [weakSelf checkForSpike];
                 
-                if ([_xAccVals count] == _arrayCapacity) {
+                if ([_xAccVals count] == kArrayCapacity) {
                     [_xAccVals removeObjectAtIndex:0];
                 }
                 [_xAccVals addObject:[NSNumber numberWithFloat:accelerometerData.acceleration.x]];
                 
-                if ([_yAccVals count] == _arrayCapacity) {
+                if ([_yAccVals count] == kArrayCapacity) {
                     [_yAccVals removeObjectAtIndex:0];
                 }
                 [_yAccVals addObject:[NSNumber numberWithFloat:accelerometerData.acceleration.y]];
                 
-                if ([_zAccVals count] == _arrayCapacity) {
+                if ([_zAccVals count] == kArrayCapacity) {
                     [_zAccVals removeObjectAtIndex:0];
                 }
                 [_zAccVals addObject:[NSNumber numberWithFloat:accelerometerData.acceleration.z]];
                 
-                [weakSelf drawX];
-                [weakSelf drawY];
-                [weakSelf drawZ];
-                
-                _currentPacket.accelerometerData = accelerometerData;
+//                [weakSelf drawX];
+//                [weakSelf drawY];
+//                [weakSelf drawZ];
+
                 [weakSelf processDataPacket];
             }];
         }
@@ -116,7 +150,7 @@ static const float zeroGraphYOffset = 120.0;
             }];
         }
         
-        // Check whether the gyroscope is available
+        // Check whether the magnetometer is available
         if ([mManager isMagnetometerAvailable] == YES) {
             // Assign the update interval to the motion manager
             [mManager setMagnetometerUpdateInterval:accelerometerMin];
@@ -127,38 +161,101 @@ static const float zeroGraphYOffset = 120.0;
         }
         
         _started = YES;
-        [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
-    } else {
+//        [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
+    }
+}
+- (void)stopMeasurements {
+    if (_started) {
         [self.locationManager stopUpdatingLocation];
         
         CMMotionManager *mManager = [(AppDelegate *)[[UIApplication sharedApplication] delegate] sharedManager];
         if ([mManager isAccelerometerActive] == YES) {
             [mManager stopAccelerometerUpdates];
         }
-        if ([mManager isGyroAvailable] == YES) {
+        if ([mManager isGyroActive] == YES) {
             [mManager stopGyroUpdates];
+        }
+        if ([mManager isMagnetometerActive] == YES) {
+            [mManager stopMagnetometerUpdates];
         }
         
         _started = NO;
-        [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
+//        [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
     }
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [self.locationManager stopUpdatingLocation];
+- (void)checkForSpike {
+    float xSum = 0.0, ySum = 0.0, zSum = 0.0;
+    float xAverage, yAverage, zAverage;
     
-    CMMotionManager *mManager = [(AppDelegate *)[[UIApplication sharedApplication] delegate] sharedManager];
-    if ([mManager isAccelerometerActive] == YES) {
-        [mManager stopAccelerometerUpdates];
+    if (_xAccVals.count == kArrayCapacity) {
+        for (NSNumber *xVal in _xAccVals) {
+            xSum += [xVal floatValue];
+        }
+        xAverage = xSum / kArrayCapacity;
+        
+        // If the new value is 20% greater than the average from the previous data, show a spike.
+        if (ABS(xAverage*kValueDifference) < ABS(_currentPacket.accelerometerData.acceleration.x)) {
+            NSLog(@"Spike detected on accelleration X-axis.");
+            [self showUnsafeDriving];
+            return;
+        }
     }
-    if ([mManager isGyroAvailable] == YES) {
-        [mManager stopGyroUpdates];
+    
+    if (_yAccVals.count == kArrayCapacity) {
+        for (NSNumber *yVal in _yAccVals) {
+            ySum += [yVal floatValue];
+        }
+        yAverage = ySum / kArrayCapacity;
+        
+        // If the new value is 20% greater than the average from the previous data, show a spike.
+        if (ABS(yAverage*kValueDifference) < ABS(_currentPacket.accelerometerData.acceleration.y)) {
+            NSLog(@"Spike detected on accelleration Y-axis.");
+            [self showUnsafeDriving];
+            return;
+        }
+    }
+    
+    if (_zAccVals.count == kArrayCapacity) {
+        for (NSNumber *zVal in _zAccVals) {
+            zSum += [zVal floatValue];
+        }
+        zAverage = zSum / kArrayCapacity;
+        
+        // If the new value is 20% greater than the average from the previous data, show a spike.
+        if (ABS(zAverage*kValueDifference) < ABS(_currentPacket.accelerometerData.acceleration.z)) {
+            NSLog(@"Spike detected on accelleration Z-axis.");
+            [self showUnsafeDriving];
+            return;
+        }
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)showUnsafeDriving {
+    
+    if (_alertingDriver == NO) {
+        _alertingDriver = YES;
+        
+        // Update UI
+        [_circleLayer setStrokeColor:[[ColorPallete badRed] CGColor]];
+        [self.statusLbl setTextColor:[ColorPallete badRed]];
+        self.statusLbl.text = @"TURN SLOWER";
+        
+        // Make beeping sound
+        AudioServicesPlaySystemSound(1050);
+        
+        // Decrease the score counter
+        NSInteger currentScore = [self.scoreLbl.text integerValue];
+        self.scoreLbl.text = [NSString stringWithFormat:@"%ld",(currentScore-1)];
+        
+        // Delay returning the UI colors to normal for 5 seconds.
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 3 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [_circleLayer setStrokeColor:[[ColorPallete goodGreen] CGColor]];
+            [self.statusLbl setTextColor:[ColorPallete goodGreen]];
+            self.statusLbl.text = @"GOOD SPEED";
+            _alertingDriver = NO;
+        });
+    }
 }
 
 - (void)processDataPacket {
@@ -305,26 +402,16 @@ static const float zeroGraphYOffset = 120.0;
     _currentPacket.location = location;
 }
 
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    return YES;
+#pragma mark - IBActions
+
+- (IBAction)backBtnPressed:(id)sender {
+    NSLog(@"backBtnPressed called.");
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    // the user pressed the "Done" button, so dismiss the keyboard
-    [textField resignFirstResponder];
-    
-    if (textField == self.driverId) {
-        _currentPacket.driverID = textField.text;
-    }
-    if (textField == self.sensorId) {
-        _currentPacket.sensorID = textField.text;
-    }
-    if (textField == self.load) {
-        _currentPacket.load = textField.text;
-    }
-    
-    return YES;
+- (IBAction)tripFinishedBtnPressed:(id)sender {
+    NSLog(@"tripFinishedBtnPressed called.");
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

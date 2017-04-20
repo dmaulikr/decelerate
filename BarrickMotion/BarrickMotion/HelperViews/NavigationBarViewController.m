@@ -34,6 +34,13 @@ typedef NS_ENUM(NSInteger, BarrickTabIndex) {
     [self updateSelectedTab];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    // Update the selected tab
+    [self.view setNeedsDisplay];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

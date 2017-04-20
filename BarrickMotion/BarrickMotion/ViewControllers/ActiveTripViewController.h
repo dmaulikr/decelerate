@@ -9,14 +9,20 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface ActiveTripViewController : UIViewController <UIScrollViewDelegate, CLLocationManagerDelegate>
+@interface ActiveTripViewController : UIViewController <CLLocationManagerDelegate>
 
-@property (strong, nonatomic) IBOutlet UIButton *startStopButton;
-@property (strong, nonatomic) IBOutlet UITextField *driverId;
-@property (strong, nonatomic) IBOutlet UITextField *sensorId;
-@property (strong, nonatomic) IBOutlet UITextField *load;
-@property (strong, nonatomic) IBOutlet UITextView *logView;
+
 @property (nonatomic, strong) CLLocationManager *locationManager;       // The location manager
+@property (strong, nonatomic) IBOutlet UIView *circleBorderView;
+@property (strong, nonatomic) IBOutlet UILabel *statusLbl;
+@property (strong, nonatomic) IBOutlet UILabel *scoreLbl;
+@property (strong, nonatomic) IBOutlet UILabel *starsLbl;
+@property (strong, nonatomic) IBOutlet UIButton *backBtn;
+@property (strong, nonatomic) IBOutlet UIButton *finishedBtn;
+
+- (IBAction)backBtnPressed:(id)sender;
+- (IBAction)tripFinishedBtnPressed:(id)sender;
+
 
 @end
 
