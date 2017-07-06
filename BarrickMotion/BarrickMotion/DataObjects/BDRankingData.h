@@ -1,5 +1,5 @@
 //
-//  BarrickRankingData.h
+//  BDRankingData.h
 //  BarrickMotion
 //
 //  Created by Kevin Hunt on 2017-04-18.
@@ -7,19 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BDConstants.h"
 
-OBJC_EXTERN NSString *const BarrickLocalRankingRankKey;
-OBJC_EXTERN NSString *const BarrickLocalRankingNameKey;
-OBJC_EXTERN NSString *const BarrickLocalRankingStarsKey;
-OBJC_EXTERN NSString *const BarrickLocalRankingScoreKey;
+/**
+ * Represents the sitewide ranking values of a given driver
+ */
+@interface BDRankingData : NSObject
 
-@interface BarrickRankingData : NSObject
-
+@property (nonatomic, nullable, strong) NSString *driverID;
 @property (nonatomic, nullable, strong) NSString *ranking;
 @property (nonatomic, nullable, strong) NSString *name;
 @property (nonatomic, nullable, strong) NSString *stars;
 @property (nonatomic, nullable, strong) NSString *score;
 
+/**
+ * Returns a BDRankingData instance for the dictionary of values
+ * @param dict An dictionary of values and keys representing the metadata properties of the BDRankingData class
+ * @return A BDRankingData instance
+ */
 - (instancetype _Nullable )initWithDictionsary:(NSDictionary *_Nonnull)dict;
 
 

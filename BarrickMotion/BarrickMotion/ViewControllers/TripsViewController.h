@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * View and controller for displaying list of all trips taken by the currently logged in driver
+ */
 @interface TripsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UIView *navigationBarView;

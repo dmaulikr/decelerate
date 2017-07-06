@@ -10,8 +10,8 @@
 
 @interface DataObject3D : NSObject
 
-@property (nonatomic, nullable, strong) NSDictionary *sensorLeft;
-@property (nonatomic, nullable, strong) NSDictionary *sensorRight;
+@property (nonatomic, nullable, strong) NSDictionary *serverData;
+@property (nonatomic, nullable, strong) NSDate *timestamp;
 @property (nonatomic) float averageAccX;
 @property (nonatomic) float averageAccY;
 @property (nonatomic) float averageAccZ;
@@ -19,6 +19,5 @@
 @property (nonatomic) float averageGyroY;
 @property (nonatomic) float averageGyroZ;
 @property (nonatomic) float averageSpeed;
-@property (nonatomic, nullable, strong) NSDate *timestamp;
 
 @end

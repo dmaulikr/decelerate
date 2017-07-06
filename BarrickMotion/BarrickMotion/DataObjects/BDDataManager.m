@@ -6,33 +6,30 @@
 //  Copyright © 2017 Prophet Studios. All rights reserved.
 //
 
-#import "BarrickDataManager.h"
-#import "BarrickTripData.h"
-#import "BarrickRankingData.h"
+#import "BDDataManager.h"
+#import "BDTripData.h"
+#import "BDRankingData.h"
 
-@implementation BarrickDataManager {
+@implementation BDDataManager {
     NSArray *_tripDataArray;
     NSArray *_rankDataArray;
 }
 
-static BarrickDataManager *_sharedDataManager;
+static BDDataManager *_sharedDataManager;
 
 + (instancetype)sharedDataManager {
-    @synchronized([BarrickDataManager class]) {
+    @synchronized([BDDataManager class]) {
         if(!_sharedDataManager) {
             NSLog(@"Creating Data Manager");
-            _sharedDataManager  = [[BarrickDataManager alloc] init];
+            _sharedDataManager  = [[BDDataManager alloc] init];
         }
-        
-        NSLog(@"Returning shared Data Manager");
         return _sharedDataManager;
     }
-    
     return nil;
 }
 
 - (void)initializeWithServer {
-    
+    // TODO: Setup CoreData storage
 }
 
 // TESTING ONLY
@@ -51,7 +48,7 @@ static BarrickDataManager *_sharedDataManager;
     NSMutableArray *mutableTripArray = [NSMutableArray array];
     
     for (NSDictionary *tripDict in [parsedTripDict objectForKey:@"tripData"]) {
-        BarrickTripData *tripDataObj = [[BarrickTripData alloc] initWithDictionsary:tripDict];
+        BDTripData *tripDataObj = [[BDTripData alloc] initWithDictionary:tripDict];
         if (tripDataObj) {
             [mutableTripArray addObject:tripDataObj];
         }
@@ -73,7 +70,7 @@ static BarrickDataManager *_sharedDataManager;
     NSMutableArray *mutableRankArray = [NSMutableArray array];
     
     for (NSDictionary *rankDict in [parsedRankDict objectForKey:@"rankData"]) {
-        BarrickRankingData *rankDataObj = [[BarrickRankingData alloc] initWithDictionsary:rankDict];
+        BDRankingData *rankDataObj = [[BDRankingData alloc] initWithDictionsary:rankDict];
         if (rankDataObj) {
             [mutableRankArray addObject:rankDataObj];
         }

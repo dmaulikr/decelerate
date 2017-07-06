@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040714621F0C78B7002AF9F8 /* BDRouteData.m in Sources */ = {isa = PBXBuildFile; fileRef = 040714611F0C78B7002AF9F8 /* BDRouteData.m */; };
 		0412FDCB1E6B2E6600E6275B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412FDCA1E6B2E6600E6275B /* main.m */; };
 		0412FDCE1E6B2E6600E6275B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412FDCD1E6B2E6600E6275B /* AppDelegate.m */; };
 		0412FDD41E6B2E6600E6275B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0412FDD21E6B2E6600E6275B /* Main.storyboard */; };
 		0412FDD61E6B2E6600E6275B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0412FDD51E6B2E6600E6275B /* Assets.xcassets */; };
 		0412FDD91E6B2E6600E6275B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0412FDD71E6B2E6600E6275B /* LaunchScreen.storyboard */; };
 		0412FDE21E6B356F00E6275B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0412FDE11E6B356F00E6275B /* CoreMotion.framework */; };
-		0412FDE51E6B4D8F00E6275B /* DataPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412FDE41E6B4D8F00E6275B /* DataPacket.m */; };
+		0412FDE51E6B4D8F00E6275B /* BDDataPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412FDE41E6B4D8F00E6275B /* BDDataPacket.m */; };
+		042B90031F05CA2900D401BF /* BDDataSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B90021F05CA2900D401BF /* BDDataSegment.m */; };
+		0453D94A1F0952F800594AAF /* BDAnnotatedMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0453D9441F0952F800594AAF /* BDAnnotatedMapView.m */; };
+		0453D94B1F0952F800594AAF /* CSRouteAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0453D9471F0952F800594AAF /* CSRouteAnnotation.m */; };
+		0453D94C1F0952F800594AAF /* CSRouteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0453D9491F0952F800594AAF /* CSRouteView.m */; };
+		0453D94E1F0954C100594AAF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0453D94D1F0954C100594AAF /* MapKit.framework */; };
+		0453D9501F0954C600594AAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0453D94F1F0954C600594AAF /* CoreLocation.framework */; };
 		0454DAB51EA6AA0400751BD7 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAB41EA6AA0400751BD7 /* DashboardViewController.m */; };
 		0454DABD1EA6AA3F00751BD7 /* ActiveTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DABA1EA6AA3E00751BD7 /* ActiveTripViewController.m */; };
 		0454DABE1EA6AA3F00751BD7 /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DABC1EA6AA3E00751BD7 /* TripsViewController.m */; };
@@ -36,13 +43,24 @@
 		0454DAF01EA6E93D00751BD7 /* RankingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0454DAEE1EA6E93D00751BD7 /* RankingTableViewCell.xib */; };
 		0454DAF21EA6EFB800751BD7 /* TripData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0454DAF11EA6EFB800751BD7 /* TripData.json */; };
 		0454DAF41EA6EFCD00751BD7 /* RankingData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0454DAF31EA6EFCD00751BD7 /* RankingData.json */; };
-		0454DAF71EA6F43300751BD7 /* BarrickDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAF61EA6F43300751BD7 /* BarrickDataManager.m */; };
-		0454DAFA1EA6F45C00751BD7 /* BarrickTripData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAF91EA6F45C00751BD7 /* BarrickTripData.m */; };
-		0454DAFD1EA6F46F00751BD7 /* BarrickRankingData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAFC1EA6F46F00751BD7 /* BarrickRankingData.m */; };
+		0454DAF71EA6F43300751BD7 /* BDDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAF61EA6F43300751BD7 /* BDDataManager.m */; };
+		0454DAFA1EA6F45C00751BD7 /* BDTripData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAF91EA6F45C00751BD7 /* BDTripData.m */; };
+		0454DAFD1EA6F46F00751BD7 /* BDRankingData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454DAFC1EA6F46F00751BD7 /* BDRankingData.m */; };
 		0454DAFF1EA8501300751BD7 /* TripHistory.png in Resources */ = {isa = PBXBuildFile; fileRef = 0454DAFE1EA8501200751BD7 /* TripHistory.png */; };
+		046E04731EDF2B5200C01C0D /* settings_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 046E04721EDF2B5200C01C0D /* settings_icon.png */; };
+		046E04771EDF2FD300C01C0D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046E04751EDF2FD300C01C0D /* SettingsViewController.m */; };
+		046E04781EDF2FD300C01C0D /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046E04761EDF2FD300C01C0D /* SettingsViewController.xib */; };
+		046E047B1EDF332400C01C0D /* BDServerDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 046E047A1EDF332400C01C0D /* BDServerDataManager.m */; };
+		046E047F1EDF4A6000C01C0D /* BDMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 046E047E1EDF4A6000C01C0D /* BDMotionManager.m */; };
+		04B8EE111EE9E8CA00FCCEDA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B8EE0E1EE9E8CA00FCCEDA /* Reachability.m */; };
+		04B8EE121EE9E8CA00FCCEDA /* StringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B8EE101EE9E8CA00FCCEDA /* StringUtils.m */; };
+		04F8902D1EEB24210081FFE8 /* BDLocData.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F8902C1EEB24210081FFE8 /* BDLocData.m */; };
+		04F890301EEB25A30081FFE8 /* BDConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F8902F1EEB25A30081FFE8 /* BDConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040714601F0C78B7002AF9F8 /* BDRouteData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDRouteData.h; path = DataObjects/BDRouteData.h; sourceTree = "<group>"; };
+		040714611F0C78B7002AF9F8 /* BDRouteData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDRouteData.m; path = DataObjects/BDRouteData.m; sourceTree = "<group>"; };
 		0412FDC61E6B2E6600E6275B /* BarrickMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarrickMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0412FDCA1E6B2E6600E6275B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0412FDCC1E6B2E6600E6275B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -52,8 +70,18 @@
 		0412FDD81E6B2E6600E6275B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0412FDDA1E6B2E6600E6275B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0412FDE11E6B356F00E6275B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		0412FDE31E6B4D8F00E6275B /* DataPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPacket.h; sourceTree = "<group>"; };
-		0412FDE41E6B4D8F00E6275B /* DataPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPacket.m; sourceTree = "<group>"; };
+		0412FDE31E6B4D8F00E6275B /* BDDataPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDDataPacket.h; sourceTree = "<group>"; };
+		0412FDE41E6B4D8F00E6275B /* BDDataPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDDataPacket.m; sourceTree = "<group>"; };
+		042B90011F05CA2900D401BF /* BDDataSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDDataSegment.h; path = DataObjects/BDDataSegment.h; sourceTree = "<group>"; };
+		042B90021F05CA2900D401BF /* BDDataSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDDataSegment.m; path = DataObjects/BDDataSegment.m; sourceTree = "<group>"; };
+		0453D9431F0952F800594AAF /* BDAnnotatedMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDAnnotatedMapView.h; sourceTree = "<group>"; };
+		0453D9441F0952F800594AAF /* BDAnnotatedMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDAnnotatedMapView.m; sourceTree = "<group>"; };
+		0453D9461F0952F800594AAF /* CSRouteAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRouteAnnotation.h; sourceTree = "<group>"; };
+		0453D9471F0952F800594AAF /* CSRouteAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRouteAnnotation.m; sourceTree = "<group>"; };
+		0453D9481F0952F800594AAF /* CSRouteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRouteView.h; sourceTree = "<group>"; };
+		0453D9491F0952F800594AAF /* CSRouteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRouteView.m; sourceTree = "<group>"; };
+		0453D94D1F0954C100594AAF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0453D94F1F0954C600594AAF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0454DAB31EA6AA0400751BD7 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DashboardViewController.h; path = ViewControllers/DashboardViewController.h; sourceTree = "<group>"; };
 		0454DAB41EA6AA0400751BD7 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DashboardViewController.m; path = ViewControllers/DashboardViewController.m; sourceTree = "<group>"; };
 		0454DAB91EA6AA3E00751BD7 /* ActiveTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActiveTripViewController.h; path = ViewControllers/ActiveTripViewController.h; sourceTree = "<group>"; };
@@ -85,13 +113,29 @@
 		0454DAEE1EA6E93D00751BD7 /* RankingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RankingTableViewCell.xib; path = HelperViews/RankingTableViewCell.xib; sourceTree = "<group>"; };
 		0454DAF11EA6EFB800751BD7 /* TripData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TripData.json; path = Resources/TripData.json; sourceTree = "<group>"; };
 		0454DAF31EA6EFCD00751BD7 /* RankingData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = RankingData.json; path = Resources/RankingData.json; sourceTree = "<group>"; };
-		0454DAF51EA6F43300751BD7 /* BarrickDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarrickDataManager.h; path = DataObjects/BarrickDataManager.h; sourceTree = "<group>"; };
-		0454DAF61EA6F43300751BD7 /* BarrickDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarrickDataManager.m; path = DataObjects/BarrickDataManager.m; sourceTree = "<group>"; };
-		0454DAF81EA6F45C00751BD7 /* BarrickTripData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarrickTripData.h; path = DataObjects/BarrickTripData.h; sourceTree = "<group>"; };
-		0454DAF91EA6F45C00751BD7 /* BarrickTripData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarrickTripData.m; path = DataObjects/BarrickTripData.m; sourceTree = "<group>"; };
-		0454DAFB1EA6F46F00751BD7 /* BarrickRankingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarrickRankingData.h; path = DataObjects/BarrickRankingData.h; sourceTree = "<group>"; };
-		0454DAFC1EA6F46F00751BD7 /* BarrickRankingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarrickRankingData.m; path = DataObjects/BarrickRankingData.m; sourceTree = "<group>"; };
+		0454DAF51EA6F43300751BD7 /* BDDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDDataManager.h; path = DataObjects/BDDataManager.h; sourceTree = "<group>"; };
+		0454DAF61EA6F43300751BD7 /* BDDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDDataManager.m; path = DataObjects/BDDataManager.m; sourceTree = "<group>"; };
+		0454DAF81EA6F45C00751BD7 /* BDTripData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDTripData.h; path = DataObjects/BDTripData.h; sourceTree = "<group>"; };
+		0454DAF91EA6F45C00751BD7 /* BDTripData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDTripData.m; path = DataObjects/BDTripData.m; sourceTree = "<group>"; };
+		0454DAFB1EA6F46F00751BD7 /* BDRankingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDRankingData.h; path = DataObjects/BDRankingData.h; sourceTree = "<group>"; };
+		0454DAFC1EA6F46F00751BD7 /* BDRankingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDRankingData.m; path = DataObjects/BDRankingData.m; sourceTree = "<group>"; };
 		0454DAFE1EA8501200751BD7 /* TripHistory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TripHistory.png; path = Resources/TripHistory.png; sourceTree = "<group>"; };
+		046E04721EDF2B5200C01C0D /* settings_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings_icon.png; path = Resources/settings_icon.png; sourceTree = "<group>"; };
+		046E04741EDF2FD300C01C0D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ViewControllers/SettingsViewController.h; sourceTree = "<group>"; };
+		046E04751EDF2FD300C01C0D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ViewControllers/SettingsViewController.m; sourceTree = "<group>"; };
+		046E04761EDF2FD300C01C0D /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ViewControllers/SettingsViewController.xib; sourceTree = "<group>"; };
+		046E04791EDF332400C01C0D /* BDServerDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDServerDataManager.h; path = Managers/BDServerDataManager.h; sourceTree = "<group>"; };
+		046E047A1EDF332400C01C0D /* BDServerDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDServerDataManager.m; path = Managers/BDServerDataManager.m; sourceTree = "<group>"; };
+		046E047D1EDF4A6000C01C0D /* BDMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDMotionManager.h; path = Managers/BDMotionManager.h; sourceTree = "<group>"; };
+		046E047E1EDF4A6000C01C0D /* BDMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDMotionManager.m; path = Managers/BDMotionManager.m; sourceTree = "<group>"; };
+		04B8EE0D1EE9E8CA00FCCEDA /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		04B8EE0E1EE9E8CA00FCCEDA /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		04B8EE0F1EE9E8CA00FCCEDA /* StringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtils.h; sourceTree = "<group>"; };
+		04B8EE101EE9E8CA00FCCEDA /* StringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtils.m; sourceTree = "<group>"; };
+		04F8902B1EEB24210081FFE8 /* BDLocData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BDLocData.h; path = DataObjects/BDLocData.h; sourceTree = "<group>"; };
+		04F8902C1EEB24210081FFE8 /* BDLocData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BDLocData.m; path = DataObjects/BDLocData.m; sourceTree = "<group>"; };
+		04F8902E1EEB25A30081FFE8 /* BDConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDConstants.h; sourceTree = "<group>"; };
+		04F8902F1EEB25A30081FFE8 /* BDConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +143,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0453D9501F0954C600594AAF /* CoreLocation.framework in Frameworks */,
+				0453D94E1F0954C100594AAF /* MapKit.framework in Frameworks */,
 				0412FDE21E6B356F00E6275B /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,7 +172,10 @@
 		0412FDC81E6B2E6600E6275B /* BarrickMotion */ = {
 			isa = PBXGroup;
 			children = (
-				0454DAC21EA6AC5E00751BD7 /* DataObjects */,
+				04F8902E1EEB25A30081FFE8 /* BDConstants.h */,
+				04F8902F1EEB25A30081FFE8 /* BDConstants.m */,
+				04B8EE0B1EE9E8CA00FCCEDA /* Third-Party */,
+				046E047C1EDF332C00C01C0D /* Managers */,
 				0454DACF1EA6B0A200751BD7 /* HelperClasses */,
 				0454DAC31EA6AC7100751BD7 /* HelperViews */,
 				0454DAB21EA6A9E500751BD7 /* ViewControllers */,
@@ -153,9 +202,33 @@
 		0412FDE01E6B356F00E6275B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0453D94F1F0954C600594AAF /* CoreLocation.framework */,
+				0453D94D1F0954C100594AAF /* MapKit.framework */,
 				0412FDE11E6B356F00E6275B /* CoreMotion.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0453D9421F0952F800594AAF /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				0453D9431F0952F800594AAF /* BDAnnotatedMapView.h */,
+				0453D9441F0952F800594AAF /* BDAnnotatedMapView.m */,
+				0453D9451F0952F800594AAF /* RouteAnnotation */,
+			);
+			name = Maps;
+			path = HelperViews/Maps;
+			sourceTree = "<group>";
+		};
+		0453D9451F0952F800594AAF /* RouteAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				0453D9461F0952F800594AAF /* CSRouteAnnotation.h */,
+				0453D9471F0952F800594AAF /* CSRouteAnnotation.m */,
+				0453D9481F0952F800594AAF /* CSRouteView.h */,
+				0453D9491F0952F800594AAF /* CSRouteView.m */,
+			);
+			path = RouteAnnotation;
 			sourceTree = "<group>";
 		};
 		0454DAB21EA6A9E500751BD7 /* ViewControllers */ = {
@@ -171,6 +244,9 @@
 				0454DABA1EA6AA3E00751BD7 /* ActiveTripViewController.m */,
 				0454DAC91EA6AFE600751BD7 /* PastTripViewController.h */,
 				0454DACA1EA6AFE600751BD7 /* PastTripViewController.m */,
+				046E04741EDF2FD300C01C0D /* SettingsViewController.h */,
+				046E04751EDF2FD300C01C0D /* SettingsViewController.m */,
+				046E04761EDF2FD300C01C0D /* SettingsViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -178,14 +254,18 @@
 		0454DAC21EA6AC5E00751BD7 /* DataObjects */ = {
 			isa = PBXGroup;
 			children = (
-				0412FDE31E6B4D8F00E6275B /* DataPacket.h */,
-				0412FDE41E6B4D8F00E6275B /* DataPacket.m */,
-				0454DAF51EA6F43300751BD7 /* BarrickDataManager.h */,
-				0454DAF61EA6F43300751BD7 /* BarrickDataManager.m */,
-				0454DAF81EA6F45C00751BD7 /* BarrickTripData.h */,
-				0454DAF91EA6F45C00751BD7 /* BarrickTripData.m */,
-				0454DAFB1EA6F46F00751BD7 /* BarrickRankingData.h */,
-				0454DAFC1EA6F46F00751BD7 /* BarrickRankingData.m */,
+				0412FDE31E6B4D8F00E6275B /* BDDataPacket.h */,
+				0412FDE41E6B4D8F00E6275B /* BDDataPacket.m */,
+				042B90011F05CA2900D401BF /* BDDataSegment.h */,
+				042B90021F05CA2900D401BF /* BDDataSegment.m */,
+				04F8902B1EEB24210081FFE8 /* BDLocData.h */,
+				04F8902C1EEB24210081FFE8 /* BDLocData.m */,
+				0454DAF81EA6F45C00751BD7 /* BDTripData.h */,
+				0454DAF91EA6F45C00751BD7 /* BDTripData.m */,
+				040714601F0C78B7002AF9F8 /* BDRouteData.h */,
+				040714611F0C78B7002AF9F8 /* BDRouteData.m */,
+				0454DAFB1EA6F46F00751BD7 /* BDRankingData.h */,
+				0454DAFC1EA6F46F00751BD7 /* BDRankingData.m */,
 			);
 			name = DataObjects;
 			sourceTree = "<group>";
@@ -193,6 +273,7 @@
 		0454DAC31EA6AC7100751BD7 /* HelperViews */ = {
 			isa = PBXGroup;
 			children = (
+				0453D9421F0952F800594AAF /* Maps */,
 				0454DAC41EA6AD0800751BD7 /* NavigationBarViewController.h */,
 				0454DAC51EA6AD0800751BD7 /* NavigationBarViewController.m */,
 				0454DAC61EA6AD0800751BD7 /* NavigationBarViewController.xib */,
@@ -218,6 +299,7 @@
 		0454DAD01EA6BE9C00751BD7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				046E04721EDF2B5200C01C0D /* settings_icon.png */,
 				0454DAFE1EA8501200751BD7 /* TripHistory.png */,
 				0454DAD31EA6BF1800751BD7 /* Logo.png */,
 				0454DAD41EA6BF1800751BD7 /* yellow_star.png */,
@@ -231,6 +313,39 @@
 				0454DAF31EA6EFCD00751BD7 /* RankingData.json */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		046E047C1EDF332C00C01C0D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0454DAC21EA6AC5E00751BD7 /* DataObjects */,
+				0454DAF51EA6F43300751BD7 /* BDDataManager.h */,
+				0454DAF61EA6F43300751BD7 /* BDDataManager.m */,
+				046E04791EDF332400C01C0D /* BDServerDataManager.h */,
+				046E047A1EDF332400C01C0D /* BDServerDataManager.m */,
+				046E047D1EDF4A6000C01C0D /* BDMotionManager.h */,
+				046E047E1EDF4A6000C01C0D /* BDMotionManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		04B8EE0B1EE9E8CA00FCCEDA /* Third-Party */ = {
+			isa = PBXGroup;
+			children = (
+				04B8EE0C1EE9E8CA00FCCEDA /* Reachability */,
+				04B8EE0F1EE9E8CA00FCCEDA /* StringUtils.h */,
+				04B8EE101EE9E8CA00FCCEDA /* StringUtils.m */,
+			);
+			path = "Third-Party";
+			sourceTree = "<group>";
+		};
+		04B8EE0C1EE9E8CA00FCCEDA /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				04B8EE0D1EE9E8CA00FCCEDA /* Reachability.h */,
+				04B8EE0E1EE9E8CA00FCCEDA /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,9 +417,11 @@
 				0454DAD61EA6BF1800751BD7 /* yellow_star.png in Resources */,
 				0454DADE1EA6CC2C00751BD7 /* truck_left.png in Resources */,
 				0454DAC81EA6AD0800751BD7 /* NavigationBarViewController.xib in Resources */,
+				046E04781EDF2FD300C01C0D /* SettingsViewController.xib in Resources */,
 				0412FDD91E6B2E6600E6275B /* LaunchScreen.storyboard in Resources */,
 				0454DAE01EA6CC2C00751BD7 /* turn.png in Resources */,
 				0412FDD61E6B2E6600E6275B /* Assets.xcassets in Resources */,
+				046E04731EDF2B5200C01C0D /* settings_icon.png in Resources */,
 				0454DAF41EA6EFCD00751BD7 /* RankingData.json in Resources */,
 				0412FDD41E6B2E6600E6275B /* Main.storyboard in Resources */,
 				0454DAF21EA6EFB800751BD7 /* TripData.json in Resources */,
@@ -319,19 +436,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0454DAFD1EA6F46F00751BD7 /* BarrickRankingData.m in Sources */,
+				046E047B1EDF332400C01C0D /* BDServerDataManager.m in Sources */,
+				0453D94A1F0952F800594AAF /* BDAnnotatedMapView.m in Sources */,
+				046E047F1EDF4A6000C01C0D /* BDMotionManager.m in Sources */,
+				0454DAFD1EA6F46F00751BD7 /* BDRankingData.m in Sources */,
 				0454DABD1EA6AA3F00751BD7 /* ActiveTripViewController.m in Sources */,
 				0454DAB51EA6AA0400751BD7 /* DashboardViewController.m in Sources */,
-				0412FDE51E6B4D8F00E6275B /* DataPacket.m in Sources */,
+				046E04771EDF2FD300C01C0D /* SettingsViewController.m in Sources */,
+				0453D94B1F0952F800594AAF /* CSRouteAnnotation.m in Sources */,
+				0412FDE51E6B4D8F00E6275B /* BDDataPacket.m in Sources */,
 				0454DACB1EA6AFE600751BD7 /* PastTripViewController.m in Sources */,
-				0454DAFA1EA6F45C00751BD7 /* BarrickTripData.m in Sources */,
+				0454DAFA1EA6F45C00751BD7 /* BDTripData.m in Sources */,
 				0412FDCE1E6B2E6600E6275B /* AppDelegate.m in Sources */,
+				04B8EE111EE9E8CA00FCCEDA /* Reachability.m in Sources */,
+				040714621F0C78B7002AF9F8 /* BDRouteData.m in Sources */,
 				0454DAC71EA6AD0800751BD7 /* NavigationBarViewController.m in Sources */,
 				0454DAEF1EA6E93D00751BD7 /* RankingTableViewCell.m in Sources */,
+				0453D94C1F0952F800594AAF /* CSRouteView.m in Sources */,
 				0412FDCB1E6B2E6600E6275B /* main.m in Sources */,
-				0454DAF71EA6F43300751BD7 /* BarrickDataManager.m in Sources */,
+				042B90031F05CA2900D401BF /* BDDataSegment.m in Sources */,
+				0454DAF71EA6F43300751BD7 /* BDDataManager.m in Sources */,
 				0454DAEA1EA6E91F00751BD7 /* TripsTableViewCell.m in Sources */,
+				04B8EE121EE9E8CA00FCCEDA /* StringUtils.m in Sources */,
+				04F890301EEB25A30081FFE8 /* BDConstants.m in Sources */,
 				0454DACE1EA6B09E00751BD7 /* ColorPallete.m in Sources */,
+				04F8902D1EEB24210081FFE8 /* BDLocData.m in Sources */,
 				0454DAC11EA6AA5400751BD7 /* RankingsViewController.m in Sources */,
 				0454DABE1EA6AA3F00751BD7 /* TripsViewController.m in Sources */,
 			);

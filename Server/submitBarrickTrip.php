@@ -1,6 +1,6 @@
 <?php 
 /*
- * Barrick Motion Data Sender V 1.0
+ * Barrick Trip Data Receiver V 1.0
  * Kevin James Hunt 2017
  * kevinjameshunt@gmail.com
  * http://www.kevinjameshunt.com
@@ -26,15 +26,8 @@ if (strlen($json_params) > 0 && isValidJSON($json_params)) {
 	$driverID = $decoded_params['driverID'];
 	$routeID = $decoded_params['routeID'];
 	$tripID = $decoded_params['tripID'];
-	$violation = $decoded_params['violation'];
-	$longitude = $decoded_params['longitude'];
-	$latitude = $decoded_params['latitude'];
-	$accX = $decoded_params['accX'];
-	$accY = $decoded_params['accY'];
-	$accZ = $decoded_params['accZ'];
-	$gyroX = $decoded_params['gyroX'];
-	$gyroY = $decoded_params['gyroY'];
-	$gyroZ = $decoded_params['gyroZ'];
+	$score = $decoded_params['score'];
+	$loadTons  = $decoded_params['loadTons'];
 
 	// connect to the database
 	$con = mysql_connect(localhost, $username, $password);
@@ -45,20 +38,13 @@ if (strlen($json_params) > 0 && isValidJSON($json_params)) {
 	mysql_select_db($database,$con);
 	
 	// prepare query to insert data into database
-	$querySql = "INSERT INTO movementData (driverID, routeID, tripID, longitude, latitude, accX, accY, accZ, gyroX, gyroY, gyroZ, violation)";
+	$querySql = "INSERT INTO tripData (driverID, routeID, tripID, loadTons, score)";
 	$querySql .= " VALUES (";
 	$querySql .= "'" . $driverID . "',";
 	$querySql .= "'" . $routeID . "',";
 	$querySql .= "'" . $tripID . "',";
-	$querySql .= "'" . $longitude . "',";
-	$querySql .= "'" . $latitude . "',";
-	$querySql .= "'" . $accX . "',";
-	$querySql .= "'" . $accY . "',";
-	$querySql .= "'" . $accZ . "',";
-	$querySql .= "'" . $gyroX . "',";
-	$querySql .= "'" . $gyroY . "',";
-	$querySql .= "'" . $gyroZ . "',";
-	$querySql .= "'" . $violation . "')";
+	$querySql .= "'" . $loadTons . "',";
+	$querySql .= "'" . $score . "')";
 		
 	// Execute the query
 	if (!mysql_query($querySql,$con))

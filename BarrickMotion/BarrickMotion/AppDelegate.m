@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "BarrickDataManager.h"
+#import "BDDataManager.h"
 
 @interface AppDelegate ()
 
@@ -26,7 +26,7 @@
     _motionManager  = [[CMMotionManager alloc] init];
     
     // Initialzie the Data Manager
-    [[BarrickDataManager sharedDataManager] initializeWithLocalData];
+    [[BDDataManager sharedDataManager] initializeWithLocalData];
     
     // Initialize the tab bar controller object
     _tabBarController = (UITabBarController *)[[self window] rootViewController];
@@ -65,7 +65,7 @@
 
 #pragma mark - Helper Methods
 
-- (CMMotionManager *)sharedManager {
+- (CMMotionManager *)sharedCMMotionManager {
     return _motionManager;
 }
 

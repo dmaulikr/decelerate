@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
+#import "BDMotionManager.h"
 
-@interface ActiveTripViewController : UIViewController <CLLocationManagerDelegate>
+/**
+ * View and controller for alerting driver of violations/score while driving during an active trip
+ */
+@interface ActiveTripViewController : UIViewController <BDMotionManagerDelegate>
 
-
-@property (nonatomic, strong) CLLocationManager *locationManager;       // The location manager
 @property (strong, nonatomic) IBOutlet UIView *circleBorderView;
 @property (strong, nonatomic) IBOutlet UILabel *statusLbl;
 @property (strong, nonatomic) IBOutlet UILabel *scoreLbl;
@@ -20,6 +21,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *backBtn;
 @property (strong, nonatomic) IBOutlet UIButton *finishedBtn;
 
+// Return to previous screen
 - (IBAction)backBtnPressed:(id)sender;
 - (IBAction)tripFinishedBtnPressed:(id)sender;
 

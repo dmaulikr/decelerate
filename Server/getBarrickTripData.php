@@ -13,8 +13,8 @@
 	date_default_timezone_set("Canada/Toronto");
 	$message = "Failure";
 
-	$timestamp = $_POST['timestamp'];
-	$driverID = $_POST['driverID'];
+	$routeID = $_POST['routeID'];
+	$tripID = $_POST['tripID'];
 
 	// connect to the database
 	$con = mysql_connect(localhost, $username, $password);
@@ -28,7 +28,7 @@
 	/// Get location data from database, create JSON response and return it
 	/// =============================
 
-	$querySql = "SELECT * FROM movementData WHERE timestamp > '" . $timestamp . "' AND driverID = '" . $driverID . "'";
+	$querySql = "SELECT * FROM movementData WHERE routeID = '" . $routeID . "' AND tripID = '" . $tripID . "'";
 	$show = mysql_query($querySql,$con) or die (mysql_error());
 	
 	$string = "{\"movementData\": [";
@@ -38,26 +38,23 @@
 		
 		//get data from row
 		$timestamp = $row["timestamp"];
-		$driverID = $row["driverID"]; 
-		$sensorID = $row["sensorID"]; 
-		$loadTons = $row["loadTons"]; 
+		$driverID = $row["driverID"];
+		$violation = $row["violation"]; 
 		$longitude = $row["longitude"];
 		$latitude = $row["latitude"];
 		$accX = $row["accX"];
 		$accY = $row["accY"];
 		$accZ = $row["accZ"];
 		$gyroX = $row["gyroX"];
-		$gyroX = $row["gyroY"];
-		$gyroX = $row["gyroZ"];
-		$magX = $row["magX"];
-		$magY = $row["magY"];
-		$magZ = $row["magY"];
+		$gyroY = $row["gyroY"];
+		$gyroZ = $row["gyroZ"];
 
 		// Create movementData element
 		$string = $string . "{\"timestamp\":\"" . $timestamp ."\",";
 		$string = $string .  "\"driverID\":\"". $driverID ."\",";
-		$string = $string .  "\"sensorID\":\"". $sensorID ."\",";
-		$string = $string .  "\"loadTons\":\"". $loadTons ."\",";
+		$string = $string .  "\"routeID\":\"". $routeID ."\",";
+		$string = $string .  "\"tripID\":\"". $tripID ."\",";
+		$string = $string .  "\"violation\":\"". $violation ."\",";
 		$string = $string .  "\"longitude\":\"". $longitude ."\",";
 		$string = $string .  "\"latitude\":\"". $latitude ."\",";
 		$string = $string .  "\"accX\":\"". $accX ."\",";
@@ -65,10 +62,7 @@
 		$string = $string .  "\"accZ\":\"". $accZ ."\",";
 		$string = $string .  "\"gyroX\":\"". $gyroX ."\",";
 		$string = $string .  "\"gyroY\":\"". $gyroY ."\",";
-		$string = $string .  "\"gyroZ\":\"". $gyroZ ."\",";
-		$string = $string .  "\"magX\":\"". $magX ."\",";
-		$string = $string .  "\"magY\":\"". $magY ."\",";
-		$string = $string .  "\"magZ\":\"". $magZ ."\"},";
+		$string = $string .  "\"gyroZ\":\"". $gyroZ ."\"},";
 	}
 	
 	if (substr($string, -1, 1) == ',') {
@@ -82,4 +76,4 @@
 	// close the connection
 	mysql_close($con);
 	
-?>
+?>	

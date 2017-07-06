@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * View and controller for displaying list of scores and ranking of all drivers
+ */
 @interface RankingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UIView *navigationBarView;

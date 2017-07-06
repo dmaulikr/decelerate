@@ -121,7 +121,8 @@ static const float zeroGraphSpeedYOffset = 940.0;
     NSString *timestamp = [dateFormatter stringFromDate:_lastTimestamp];
     
     // Send the data to the server
-    NSString *urlString = [[NSString alloc] initWithFormat:@"driverID=%@",@"JohnDriver"];
+    NSString *urlString = [[NSString alloc] initWithFormat:@"driverID=%@",@"TestDriver1"];
+    urlString = [urlString stringByAppendingFormat:@"&routeID=%@",@"route1"];
     urlString = [urlString stringByAppendingFormat:@"&timestamp=%@",timestamp];
     
     // Add escape characters
@@ -153,94 +154,72 @@ static const float zeroGraphSpeedYOffset = 940.0;
         if (!jsonError && jsonDict) {
             NSArray *newData = [jsonDict objectForKey:@"movementData"];
             if (newData) {
-                NSMutableArray *sensorLData = [[NSMutableArray alloc] init];
-                NSMutableArray *sensorRData = [[NSMutableArray alloc] init];
-                
-                // loop through all data and pair it up
+                // Loop through the all data records returned from the server
                 for (NSDictionary *dataDict in newData) {
-                    if ([[dataDict objectForKey:@"sensorID"] isEqualToString:@"SensorL"]) {
-                        [sensorLData addObject:dataDict];
-                    } else if ([[dataDict objectForKey:@"sensorID"] isEqualToString:@"SensorR"]) {
-                        [sensorRData addObject:dataDict];
+                    DataObject3D *dataObj = [[DataObject3D alloc] init];
+                    dataObj.serverData = dataDict;
+                    dataObj.timestamp = [dateFormatter dateFromString:[dataDict objectForKey:@"timestamp"]];
+                            
+                    float accXVal = 10*[[dataDict objectForKey:@"accX"] floatValue];
+                    if ([_accX count] == _arrayCapacity) {
+                        [_accX removeObjectAtIndex:0];
                     }
-                }
-                
-                // Loop through the left sensors, then the right to find matching timestamps
-                for (NSDictionary *lData in sensorLData) {
-                    NSDate *lTimestamp = [dateFormatter dateFromString:[lData objectForKey:@"timestamp"]];
-                    for (NSDictionary *rData in sensorRData) {
-                        NSDate *rTimestamp = [dateFormatter dateFromString:[rData objectForKey:@"timestamp"]];
-                        NSTimeInterval secondsBetween = [lTimestamp timeIntervalSinceDate:rTimestamp];
-                        if (secondsBetween >= -0.5 || secondsBetween <= 0.5) {
-                            DataObject3D *dataObj = [[DataObject3D alloc] init];
-                            dataObj.timestamp = lTimestamp;
-                            dataObj.sensorLeft = lData;
-                            dataObj.sensorRight = rData;
+                    [_accX addObject:[NSNumber numberWithFloat:accXVal]];
+                    dataObj.averageAccX = accXVal;
                             
-                            float accXVal = 5*([[lData objectForKey:@"accX"] floatValue]+[[rData objectForKey:@"accX"] floatValue])/2; // Take the average
-                            if ([_accX count] == _arrayCapacity) {
-                                [_accX removeObjectAtIndex:0];
-                            }
-                            [_accX addObject:[NSNumber numberWithFloat:accXVal]];
-                            dataObj.averageAccX = accXVal;
-                            
-                            float accYVal = 5*([[lData objectForKey:@"accY"] floatValue]+[[rData objectForKey:@"accY"] floatValue])/2; // Take the average
-                            if ([_accY count] == _arrayCapacity) {
-                                [_accY removeObjectAtIndex:0];
-                            }
-                            [_accY addObject:[NSNumber numberWithFloat:accYVal]];
-                            dataObj.averageAccY = accYVal;
-                            
-                            float accZVal = 5*([[lData objectForKey:@"accZ"] floatValue]+[[rData objectForKey:@"accZ"] floatValue])/2; // Take the average
-                            if ([_accZ count] == _arrayCapacity) {
-                                [_accZ removeObjectAtIndex:0];
-                            }
-                            [_accZ addObject:[NSNumber numberWithFloat:accZVal]];
-                            dataObj.averageAccZ = accZVal;
-                            
-                            float gyroXVal = ([[lData objectForKey:@"gyroX"] floatValue]+[[rData objectForKey:@"gyroX"] floatValue])/2; // Take the average
-                            if ([_gyroX count] == _arrayCapacity) {
-                                [_gyroX removeObjectAtIndex:0];
-                            }
-                            [_gyroX addObject:[NSNumber numberWithFloat:gyroXVal]];
-                            dataObj.averageGyroX = gyroXVal;
-                            
-                            float gyroYVal = ([[lData objectForKey:@"gyroY"] floatValue]+[[rData objectForKey:@"gyroY"] floatValue])/2; // Take the average
-                            if ([_gyroY count] == _arrayCapacity) {
-                                [_gyroY removeObjectAtIndex:0];
-                            }
-                            [_gyroY addObject:[NSNumber numberWithFloat:gyroYVal]];
-                            dataObj.averageGyroY = gyroYVal;
-                            
-                            float gyroZVal = ([[lData objectForKey:@"gyroZ"] floatValue]+[[rData objectForKey:@"gyroZ"] floatValue])/2; // Take the average
-                            if ([_gyroZ count] == _arrayCapacity) {
-                                [_gyroZ removeObjectAtIndex:0];
-                            }
-                            [_gyroZ addObject:[NSNumber numberWithFloat:gyroZVal]];
-                            dataObj.averageGyroZ = gyroZVal;
-                            
-                            float speedVal = ([[lData objectForKey:@"magX"] floatValue]+[[rData objectForKey:@"magX"] floatValue])/2; // Take the average
-                            if (speedVal > 1000) {
-                                speedVal = 100;
-                            } else {
-                                speedVal = speedVal / 5;
-                            }
-                            
-                            if ([_speed count] == _arrayCapacity) {
-                                [_speed removeObjectAtIndex:0];
-                            }
-                            [_speed addObject:[NSNumber numberWithFloat:speedVal]];
-                            dataObj.averageSpeed = speedVal;
+                    float accYVal = 10*[[dataDict objectForKey:@"accY"] floatValue];
+                    if ([_accY count] == _arrayCapacity) {
+                        [_accY removeObjectAtIndex:0];
+                    }
+                    [_accY addObject:[NSNumber numberWithFloat:accYVal]];
+                    dataObj.averageAccY = accYVal;
+                    
+                    float accZVal = 10*[[dataDict objectForKey:@"accZ"] floatValue];
+                    if ([_accZ count] == _arrayCapacity) {
+                        [_accZ removeObjectAtIndex:0];
+                    }
+                    [_accZ addObject:[NSNumber numberWithFloat:accZVal]];
+                    dataObj.averageAccZ = accZVal;
+                    
+                    float gyroXVal = 10*[[dataDict objectForKey:@"gyroX"] floatValue];
+                    if ([_gyroX count] == _arrayCapacity) {
+                        [_gyroX removeObjectAtIndex:0];
+                    }
+                    [_gyroX addObject:[NSNumber numberWithFloat:gyroXVal]];
+                    dataObj.averageGyroX = gyroXVal;
+                    
+                    float gyroYVal = 10*[[dataDict objectForKey:@"gyroY"] floatValue];
+                    if ([_gyroY count] == _arrayCapacity) {
+                        [_gyroY removeObjectAtIndex:0];
+                    }
+                    [_gyroY addObject:[NSNumber numberWithFloat:gyroYVal]];
+                    dataObj.averageGyroY = gyroYVal;
+                    
+                    float gyroZVal = 10*[[dataDict objectForKey:@"gyroZ"] floatValue];
+                    if ([_gyroZ count] == _arrayCapacity) {
+                        [_gyroZ removeObjectAtIndex:0];
+                    }
+                    [_gyroZ addObject:[NSNumber numberWithFloat:gyroZVal]];
+                    dataObj.averageGyroZ = gyroZVal;
+                    
+//                            float speedVal = ([[lData objectForKey:@"magX"] floatValue]+[[rData objectForKey:@"magX"] floatValue])/2; // Take the average
+//                            if (speedVal > 1000) {
+//                                speedVal = 100;
+//                            } else {
+//                                speedVal = speedVal / 5;
+//                            }
+//                            
+//                            if ([_speed count] == _arrayCapacity) {
+//                                [_speed removeObjectAtIndex:0];
+//                            }
+//                            [_speed addObject:[NSNumber numberWithFloat:speedVal]];
+//                            dataObj.averageSpeed = speedVal;
 //                            self.speedField.text = [NSString stringWithFormat:@"%f",speedVal];
                             
-                            if ([_dataStream count] == _arrayCapacity) {
-                                [_dataStream removeObjectAtIndex:0];
-                            }
-                            [_dataStream addObject:dataObj];
-                            
-                            break;
-                        }
+                    if ([_dataStream count] == _arrayCapacity) {
+                        [_dataStream removeObjectAtIndex:0];
                     }
+                    [_dataStream addObject:dataObj];
                 }
                 
                 // Draw graphs
@@ -250,7 +229,7 @@ static const float zeroGraphSpeedYOffset = 940.0;
                 [self drawGyroX:[NSArray arrayWithArray:_gyroX]];
                 [self drawGyroY:[NSArray arrayWithArray:_gyroY]];
                 [self drawGyroZ:[NSArray arrayWithArray:_gyroZ]];
-                [self drawSpeed:[NSArray arrayWithArray:_speed]];
+//                [self drawSpeed:[NSArray arrayWithArray:_speed]];
             }
         }
     }

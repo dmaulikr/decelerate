@@ -10,8 +10,9 @@
 #import "NavigationBarViewController.h"
 #import "PastTripViewController.h"
 #import "TripsTableViewCell.h"
-#import "BarrickDataManager.h"
-#import "BarrickTripData.h"
+#import "BDDataManager.h"
+#import "BDTripData.h"
+#import "BDServerDataManager.h"
 
 @interface TripsViewController ()
 
@@ -20,7 +21,9 @@
 
 @end
 
-@implementation TripsViewController
+@implementation TripsViewController {
+    NSArray *_tripDataArray;
+}
 
 static NSString *cellIdentifier = @"tripCellIdentifier";
 
@@ -42,6 +45,25 @@ static NSString *cellIdentifier = @"tripCellIdentifier";
     
     // Update the selected tab
     [self.navigationBarController updateSelectedTab];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // Get the trip data from the server for this user
+    NSString *driverID = [[BDServerDataManager sharedDataManager] driverID];
+    [[BDServerDataManager sharedDataManager] getTripDataForDriverID:driverID withCallback:^(NSArray * _Nullable tripDataArray, NSError * _Nullable error) {
+        if (error) {
+            _tripDataArray = [[BDDataManager sharedDataManager] tripData];
+        } else {
+            _tripDataArray = tripDataArray;
+        }
+        
+        // Refresh the view
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tripsTableView reloadData];
+        });
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,21 +88,21 @@ static NSString *cellIdentifier = @"tripCellIdentifier";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 14;
+    return [_tripDataArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     TripsTableViewCell *cell = [self.tripsTableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    NSArray *tripDataArray = [[BarrickDataManager sharedDataManager] tripData];
-    if (tripDataArray) {
-        BarrickTripData *tripDataObj = [tripDataArray objectAtIndex:[indexPath row]];
+    if (_tripDataArray) {
+        // Get the trip object to populate the cell
+        BDTripData *tripDataObj = [_tripDataArray objectAtIndex:[indexPath row]];
         
         // Update cell with data
         cell.scoreLbl.text = tripDataObj.score;
         cell.titleLbl.text = tripDataObj.date;
-        cell.subtitleLbl.text = [NSString stringWithFormat:@"%@ | %@", tripDataObj.time, tripDataObj.address];
+        cell.subtitleLbl.text = [NSString stringWithFormat:@"%@ | %@", tripDataObj.time, tripDataObj.routeObj.routeName];
     }
     
     return cell;
@@ -95,10 +117,16 @@ static NSString *cellIdentifier = @"tripCellIdentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    self.pastTripViewController = (PastTripViewController *)[sb instantiateViewControllerWithIdentifier:@"PastTripViewController"];
-    //self.activeTripViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self presentViewController:self.pastTripViewController animated:YES completion:nil];
+    if (_tripDataArray) {
+        // Get the trip object and pass it to the next view
+        BDTripData *tripDataObj = [_tripDataArray objectAtIndex:[indexPath row]];
+    
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.pastTripViewController = (PastTripViewController *)[sb instantiateViewControllerWithIdentifier:@"PastTripViewController"];
+        self.pastTripViewController.tripData = tripDataObj;
+        //self.activeTripViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        [self presentViewController:self.pastTripViewController animated:YES completion:nil];
+    }
 }
 
 @end

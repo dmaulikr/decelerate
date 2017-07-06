@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UIView *tripsUnderlineView;
 @property (strong, nonatomic) IBOutlet UIView *rankingsUnderlineView;
 
+// Change the active ViewController
 - (IBAction)dashboardBtnPressed:(id)sender;
 - (IBAction)tripsBtnPressed:(id)sender;
 - (IBAction)rankingsBtnPressed:(id)sender;

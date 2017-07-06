@@ -13,8 +13,10 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-- (CMMotionManager *)sharedManager;
+// Store this here as per Apple Docs
+- (CMMotionManager *)sharedCMMotionManager;
 
+// Manage the active tabs
 - (NSInteger)activeTabIndex;
 - (void)changeActiveTab:(NSInteger)tabIndex;
 

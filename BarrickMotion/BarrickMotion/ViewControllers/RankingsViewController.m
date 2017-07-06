@@ -9,8 +9,8 @@
 #import "RankingsViewController.h"
 #import "NavigationBarViewController.h"
 #import "RankingTableViewCell.h"
-#import "BarrickDataManager.h"
-#import "BarrickRankingData.h"
+#import "BDDataManager.h"
+#import "BDRankingData.h"
 
 @interface RankingsViewController ()
 
@@ -71,9 +71,9 @@ static NSString *cellIdentifier = @"rankingCellIdentifier";
     
     RankingTableViewCell *cell = [self.rankingsTableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    NSArray *rankingDataArray = [[BarrickDataManager sharedDataManager] rankData];
+    NSArray *rankingDataArray = [[BDDataManager sharedDataManager] rankData];
     if (rankingDataArray) {
-        BarrickRankingData *rankingDataObj = [rankingDataArray objectAtIndex:[indexPath row]];
+        BDRankingData *rankingDataObj = [rankingDataArray objectAtIndex:[indexPath row]];
         
         // Update cell with data
         cell.scoreLbl.text = rankingDataObj.score;

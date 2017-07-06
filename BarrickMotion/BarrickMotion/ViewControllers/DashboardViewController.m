@@ -9,6 +9,8 @@
 #import "DashboardViewController.h"
 #import "NavigationBarViewController.h"
 #import "ActiveTripViewController.h"
+#import "SettingsViewController.h"
+#import "BDServerDataManager.h"
 
 @interface DashboardViewController ()
 
@@ -41,6 +43,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)viewDidLayoutSubviews
+{
+    // The scrollview needs to know the content size for it to work correctly
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 385);
+}
+
 /*
 #pragma mark - Navigation
 
@@ -56,5 +65,10 @@
     self.activeTripViewController = (ActiveTripViewController *)[sb instantiateViewControllerWithIdentifier:@"ActiveTripViewController"];
     //self.activeTripViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self presentViewController:self.activeTripViewController animated:YES completion:nil];
+}
+
+- (IBAction)settingsButtonPressed:(id)sender {
+    SettingsViewController *settingsVC = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:[NSBundle mainBundle]];
+    [self presentViewController:settingsVC animated:YES completion:nil];
 }
 @end
